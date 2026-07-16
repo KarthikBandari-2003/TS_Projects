@@ -1,0 +1,7 @@
+names:
+  0: logo
+  1: button_ok
+  2: button_yes
+path: C:/Users/hp/.gemini/antigravity-ide/scratch/LogoLocatorTool/scratch/yolo_dataset
+train: images/train
+val: images/val

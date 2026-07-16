@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Locator Tool — Live Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:#060b14; --surface:#0d1526; --card:#111827;
+            --border:rgba(255,255,255,0.07); --accent:#3b82f6;
+            --green:#22c55e; --red:#ef4444; --yellow:#f59e0b;
+            --purple:#a855f7; --text:#f1f5f9; --muted:#64748b;
+        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+        body::before{content:'';position:fixed;inset:0;z-index:0;
+            background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),
+                             linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);
+            background-size:48px 48px;animation:gridShift 20s linear infinite;}
+        @keyframes gridShift{to{background-position:48px 48px;}}
+
+        .wrapper{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:28px 24px;}
+
+        /* HEADER */
+        header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;gap:16px;flex-wrap:wrap;}
+        .logo-mark{display:flex;align-items:center;gap:14px;}
+        .logo-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+            display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 24px rgba(59,130,246,0.4);}
+        h1{font-size:1.6rem;font-weight:700;line-height:1.2;}
+        h1 span{background:linear-gradient(90deg,#60a5fa,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .subtitle{font-size:0.8rem;color:var(--muted);margin-top:2px;}
+
+        #status-badge{padding:8px 20px;border-radius:100px;font-weight:600;font-size:0.85rem;
+            border:1px solid var(--border);background:var(--card);color:var(--muted);transition:all 0.4s;}
+        #status-badge.running{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.4);color:#60a5fa;}
+        #status-badge.pass{background:rgba(34,197,94,0.15);border-color:rgba(34,197,94,0.4);color:var(--green);}
+        #status-badge.fail{background:rgba(239,68,68,0.15);border-color:rgba(239,68,68,0.4);color:var(--red);}
+
+        #run-btn{cursor:pointer;border:none;outline:none;padding:12px 28px;border-radius:100px;
+            font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:600;
+            background:linear-gradient(90deg,#3b82f6,#8b5cf6);color:#fff;
+            box-shadow:0 0 20px rgba(59,130,246,0.4);transition:all 0.3s;}
+        #run-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 0 32px rgba(59,130,246,0.6);}
+        #run-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+
+        /* STATS */
+        .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+        .stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;transition:border-color 0.3s;}
+        .stat-card:hover{border-color:rgba(59,130,246,0.3);}
+        .stat-label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
+        .stat-value{font-size:2rem;font-weight:700;margin-top:8px;}
+        .stat-sub{font-size:0.72rem;color:var(--muted);margin-top:2px;}
+
+        /* MAIN GRID */
+        .main-grid{display:grid;grid-template-columns:1fr 440px;gap:24px;}
+
+        /* PIPELINE */
+        .pipeline-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;}
+        .section-title{font-size:1rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:20px;}
+        .stage{display:flex;align-items:flex-start;gap:20px;padding:20px 0;position:relative;
+            border-left:2px solid rgba(255,255,255,0.07);padding-left:24px;transition:border-color 0.4s;}
+        .stage:last-child{border-left-color:transparent;}
+        .stage-dot{position:absolute;left:-9px;top:22px;width:16px;height:16px;border-radius:50%;
+            background:var(--surface);border:2px solid var(--border);transition:all 0.4s;flex-shrink:0;}
+        .stage.active .stage-dot{background:var(--accent);border-color:var(--accent);box-shadow:0 0 12px var(--accent);animation:dotPulse 1.5s infinite;}
+        .stage.pass   .stage-dot{background:var(--green);border-color:var(--green);box-shadow:0 0 10px rgba(34,197,94,0.6);animation:none;}
+        .stage.fail   .stage-dot{background:var(--red);border-color:var(--red);box-shadow:0 0 10px rgba(239,68,68,0.6);animation:none;}
+        .stage.active{border-left-color:var(--accent);}
+        .stage.pass{border-left-color:var(--green);}
+        .stage.fail{border-left-color:var(--red);}
+        @keyframes dotPulse{0%,100%{box-shadow:0 0 12px var(--accent);}50%{box-shadow:0 0 24px var(--accent),0 0 40px rgba(59,130,246,0.3);}}
+
+        .stage-meta{flex:1;}
+        .stage-name{font-size:1rem;font-weight:600;}
+        .stage-desc{font-size:0.8rem;color:var(--muted);margin-top:3px;}
+        .stage-badge{font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:100px;
+            background:var(--surface);color:var(--muted);border:1px solid var(--border);
+            flex-shrink:0;transition:all 0.4s;margin-top:18px;}
+        .stage.active .stage-badge{background:rgba(59,130,246,0.2);color:#60a5fa;border-color:rgba(59,130,246,0.4);}
+        .stage.pass   .stage-badge{background:rgba(34,197,94,0.15);color:var(--green);border-color:rgba(34,197,94,0.3);}
+        .stage.fail   .stage-badge{background:rgba(239,68,68,0.15);color:var(--red);border-color:rgba(239,68,68,0.3);}
+
+        .stage-detail{margin-top:10px;font-size:0.78rem;color:#94a3b8;
+            background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 12px;
+            border:1px solid var(--border);display:none;}
+        .stage-detail.visible{display:block;animation:fadeIn 0.4s;}
+        .conf-bar-wrap{margin-top:8px;}
+        .conf-label{font-size:0.72rem;color:var(--muted);margin-bottom:4px;}
+        .conf-bar{height:6px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;}
+        .conf-fill{height:100%;border-radius:4px;width:0;transition:width 1s cubic-bezier(0.4,0,0.2,1);}
+
+        /* RIGHT PANEL */
+        .right-panel{display:flex;flex-direction:column;gap:20px;}
+        .screen-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px;}
+
+        /* SCREEN VIEWPORT — the simulated infotainment display */
+        .screen-viewport{position:relative;width:100%;padding-top:60%;
+            border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,0.06);}
+        .screen-inner{position:absolute;inset:0;}
+
+        /* Each full-screen state */
+        .screen-state{position:absolute;inset:0;opacity:0;transition:opacity 0.6s;pointer-events:none;}
+        .screen-state.active{opacity:1;pointer-events:all;}
+
+        /* --- IDLE --- */
+        #screen-idle{background:linear-gradient(135deg,#060b14,#0a1428);
+            display:flex;align-items:center;justify-content:center;flex-direction:column;}
+        .idle-icon{font-size:48px;opacity:0.15;}
+        .idle-text{font-size:0.75rem;color:var(--muted);margin-top:12px;letter-spacing:0.1em;}
+
+        /* --- BOOT (plain dark) --- */
+        #screen-boot{background:#020408;}
+
+        /* --- LOGO DETECT (scan lines overlay) --- */
+        #screen-logo-detect{background:#020408;}
+        #screen-logo-detect::after{
+            content:'';position:absolute;inset:0;pointer-events:none;
+            background:repeating-linear-gradient(0deg,rgba(0,0,0,0.08) 0px,rgba(0,0,0,0.08) 1px,transparent 1px,transparent 3px);
+        }
+
+        /* --- DISCLAIMER --- */
+        #screen-disclaimer{background:linear-gradient(160deg,#050d1e,#0a1830);}
+        #screen-btn-detect{background:linear-gradient(160deg,#050d1e,#0a1830);}
+        #screen-tap{background:linear-gradient(160deg,#050d1e,#0a1830);}
+
+        /* --- HOME --- */
+        #screen-home{background:linear-gradient(135deg,#0f172a,#1e1b4b,#0f172a);}
+
+        /* Dynamic OEM logo element */
+        #oem-logo{
+            position:absolute;
+            font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:0.18em;
+            background:linear-gradient(135deg,#ffffff,#94a3b8);
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+            white-space:nowrap;user-select:none;
+            transition:left 0.05s, top 0.05s;
+        }
+        #oem-tagline{
+            position:absolute;font-size:0.5rem;letter-spacing:0.25em;
+            color:rgba(255,255,255,0.25);white-space:nowrap;
+        }
+
+        /* Boot progress bar */
+        #boot-progress-wrap{
+            position:absolute;bottom:18%;left:50%;transform:translateX(-50%);
+            width:40%;
+        }
+        .boot-bar-track{height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+        #boot-bar-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#8b5cf6);width:0;transition:width 2s ease;}
+
+        /* GREEN detection box drawn absolutely on screen viewport */
+        #logo-bbox{
+            position:absolute;border:2px solid #22c55e;border-radius:4px;display:none;
+            box-shadow:0 0 16px rgba(34,197,94,0.5),inset 0 0 10px rgba(34,197,94,0.08);
+            animation:bboxAppear 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        #logo-bbox-label{
+            position:absolute;top:-22px;left:0;
+            background:#22c55e;color:#000;font-size:0.55rem;font-weight:700;
+            padding:2px 7px;border-radius:4px;white-space:nowrap;
+            font-family:'JetBrains Mono',monospace;
+        }
+        /* Crosshair center dot */
+        #logo-center-dot{
+            position:absolute;width:6px;height:6px;border-radius:50%;background:#22c55e;
+            transform:translate(-50%,-50%);display:none;
+            box-shadow:0 0 8px #22c55e;
+        }
+
+        /* AMBER button detection box */
+        #btn-bbox{
+            position:absolute;border:2px solid #f59e0b;border-radius:6px;display:none;
+            box-shadow:0 0 16px rgba(245,158,11,0.6),inset 0 0 8px rgba(245,158,11,0.08);
+            animation:bboxAppear 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        #btn-bbox-label{
+            position:absolute;top:-22px;left:0;
+            background:#f59e0b;color:#000;font-size:0.55rem;font-weight:700;
+            padding:2px 7px;border-radius:4px;white-space:nowrap;
+            font-family:'JetBrains Mono',monospace;
+        }
+        #btn-center-dot{
+            position:absolute;width:6px;height:6px;border-radius:50%;background:#f59e0b;
+            transform:translate(-50%,-50%);display:none;
+            box-shadow:0 0 8px #f59e0b;
+        }
+
+        @keyframes bboxAppear{from{transform:scale(0.6);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+        /* Tap ripple */
+        .tap-ripple{
+            position:absolute;width:36px;height:36px;border-radius:50%;
+            background:rgba(245,158,11,0.2);border:2px solid #f59e0b;
+            transform:translate(-50%,-50%) scale(0);pointer-events:none;
+            animation:rippleGo 0.9s ease-out forwards;
+        }
+        @keyframes rippleGo{0%{transform:translate(-50%,-50%) scale(0.3);opacity:1;}100%{transform:translate(-50%,-50%) scale(4);opacity:0;}}
+
+        /* Disclaimer UI (drawn dynamically) */
+        .dis-panel{
+            position:absolute;background:rgba(10,20,40,0.92);border:1px solid rgba(96,165,250,0.15);
+            border-radius:10px;padding:12px;backdrop-filter:blur(4px);
+        }
+        .dis-title{font-size:0.62rem;font-weight:700;color:#60a5fa;letter-spacing:0.04em;}
+        .dis-body{font-size:0.48rem;color:rgba(255,255,255,0.4);margin-top:6px;line-height:1.6;}
+        .dis-btns{display:flex;gap:6px;margin-top:10px;justify-content:flex-end;}
+
+        /* Dynamic button */
+        #dyn-btn{
+            position:absolute;border:none;cursor:default;
+            font-family:'Outfit',sans-serif;font-weight:700;
+            border-radius:6px;display:none;
+            box-shadow:0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        /* Home screen */
+        .home-grid-wrap{
+            position:absolute;inset:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+        }
+        .home-top-bar{font-size:0.6rem;color:rgba(255,255,255,0.3);letter-spacing:0.12em;margin-bottom:10px;}
+        .home-icons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;}
+        .home-icon{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;border:1px solid rgba(255,255,255,0.08);}
+        .home-status{margin-top:10px;font-size:0.55rem;color:#22c55e;letter-spacing:0.06em;}
+
+        /* Scan sweep animation for detection stages */
+        .scan-sweep{
+            position:absolute;left:0;right:0;height:2px;
+            background:linear-gradient(90deg,transparent,#3b82f6,transparent);
+            box-shadow:0 0 12px #3b82f6;
+            animation:scanMove 1s linear infinite;display:none;
+        }
+        .scan-sweep.active{display:block;}
+        @keyframes scanMove{from{top:0;}to{top:100%;}}
+
+        /* LOG */
+        .log-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:0;overflow:hidden;}
+        .log-header{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;
+            border-bottom:1px solid var(--border);background:rgba(0,0,0,0.2);}
+        .log-title{font-size:0.8rem;font-weight:600;}
+        .log-dots{display:flex;gap:6px;}
+        .log-dots span{width:10px;height:10px;border-radius:50%;}
+        .log-dots span:nth-child(1){background:#ef4444;}
+        .log-dots span:nth-child(2){background:#f59e0b;}
+        .log-dots span:nth-child(3){background:#22c55e;}
+        .log-body{height:260px;overflow-y:auto;padding:12px 14px;
+            font-family:'JetBrains Mono',monospace;font-size:0.68rem;line-height:1.75;}
+        .log-body::-webkit-scrollbar{width:4px;}
+        .log-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px;}
+        .log-entry{animation:fadeIn 0.3s;margin-bottom:2px;}
+        .log-entry .ts{color:var(--muted);}
+        .log-entry .lvl-info{color:#60a5fa;}
+        .log-entry .lvl-pass{color:#22c55e;}
+        .log-entry .lvl-fail{color:#ef4444;}
+        .log-entry .lvl-warn{color:#f59e0b;}
+        .log-entry .msg{color:#cbd5e1;}
+        .log-cursor{display:inline-block;width:8px;height:14px;background:#3b82f6;vertical-align:middle;animation:blink 1s step-end infinite;}
+        @keyframes blink{50%{opacity:0;}}
+
+        /* ACTION BUTTONS */
+        .action-row{display:flex;gap:10px;flex-wrap:wrap;}
+        .act-btn{flex:1;min-width:80px;padding:10px 14px;border-radius:10px;border:1px solid var(--border);
+            font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer;
+            background:var(--card);color:var(--muted);transition:all 0.25s;}
+        .act-btn:hover:not(:disabled){border-color:rgba(59,130,246,0.5);color:#60a5fa;background:rgba(59,130,246,0.1);transform:translateY(-1px);}
+        .act-btn:disabled{opacity:0.35;cursor:not-allowed;}
+        .act-btn.danger:hover:not(:disabled){border-color:rgba(239,68,68,0.5);color:#f87171;background:rgba(239,68,68,0.1);}
+
+        .report-link{display:none;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;
+            background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);
+            color:var(--green);font-size:0.82rem;font-weight:600;text-decoration:none;cursor:pointer;transition:all 0.25s;}
+        .report-link.visible{display:inline-flex;animation:fadeIn 0.5s;}
+        .report-link:hover{background:rgba(34,197,94,0.2);transform:translateY(-1px);}
+
+        /* COORD BADGE — shown below screen */
+        #coord-display{
+            margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:0.65rem;
+            color:var(--muted);text-align:center;min-height:1.2em;transition:color 0.3s;
+        }
+        #coord-display.logo-active{color:#22c55e;}
+        #coord-display.btn-active{color:#f59e0b;}
+
+        @keyframes fadeIn{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+        @media(max-width:960px){.main-grid{grid-template-columns:1fr;}.stats-row{grid-template-columns:repeat(2,1fr);}}
+        @media(max-width:520px){.stats-row{grid-template-columns:1fr 1fr;}}
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-mark">
+            <div class="logo-icon">🔍</div>
+            <div>
+                <h1><span>Logo Locator</span> Automation</h1>
+                <div class="subtitle">Automotive Infotainment · Live Pipeline Dashboard</div>
+            </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <span id="status-badge">● IDLE</span>
+            <button id="run-btn" onclick="startAutomation()">▶ Run Automation</button>
+        </div>
+    </header>
+
+    <!-- STATS -->
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="stat-label">Device</div>
+            <div class="stat-value" style="font-size:1.3rem;color:#60a5fa;">MOCK</div>
+            <div class="stat-sub">Mock Simulation Mode</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Elapsed Time</div>
+            <div class="stat-value" id="stat-time">0.00s</div>
+            <div class="stat-sub">Runtime counter</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Steps Passed</div>
+            <div class="stat-value" style="color:var(--green);" id="stat-pass">0</div>
+            <div class="stat-sub">of 6 total stages</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Detection Method</div>
+            <div class="stat-value" style="font-size:1.1rem;color:var(--purple);" id="stat-method">—</div>
+            <div class="stat-sub">Active engine</div>
+        </div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+
+        <!-- LEFT: PIPELINE -->
+        <div class="pipeline-card">
+            <div class="section-title">⚡ Execution Pipeline</div>
+            <div id="pipeline">
+
+                <div class="stage" id="stage-0">
+                    <div class="stage-dot"></div>
+                    <div class="stage-meta" style="flex:1">
+                        <div class="stage-name">① ADB Connect &amp; Boot Wait</div>
+                        <div class="stage-desc">Connect to infotainment device via ADB and poll sys.boot_completed</div>
+                        <div class="stage-detail" id="detail-0">
+                            <div>🔌 Connecting to device <strong>mock</strong>...</div>
+                            <div style="margin-top:5px;">📡 Polling <code>getprop sys.boot_completed</code> every 1s</div>
+                            <div class="conf-bar-wrap">
+                                <div class="conf-label">Boot Progress</div>
+                                <div class="conf-bar"><div class="conf-fill" id="fill-0" style="background:linear-gradient(90deg,#3b82f6,#8b5cf6);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stage-badge" id="badge-0">PENDING</div>
+                </div>
+
+                <div class="stage" id="stage-1">
+                    <div class="stage-dot"></div>
+                    <div class="stage-meta" style="flex:1">
+                        <div class="stage-name">② Capture &amp; Detect OEM Boot Logo</div>
+                        <div class="stage-desc">Screenshot → Template Match / YOLO — logo at <strong id="logo-pos-label">random position</strong></div>
+                        <div class="stage-detail" id="detail-1">
+                            <div>📸 Screen captured → Running detection pipeline</div>
+                            <div style="margin-top:5px;">🧠 Method: <strong id="logo-method-txt">—</strong> &nbsp;|&nbsp; Conf: <strong id="logo-conf-txt" style="color:#22c55e;">—</strong></div>
+                            <div class="conf-bar-wrap">
+                                <div class="conf-label">Confidence Score</div>
+                                <div class="conf-bar"><div class="conf-fill" id="fill-1" style="background:linear-gradient(90deg,#22c55e,#16a34a);"></div></div>
+                            </div>
+                            <div style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;" id="logo-coords">—</div>
+                        </div>
+                    </div>
+                    <div class="stage-badge" id="badge-1">PENDING</div>
+                </div>
+
+                <div class="stage" id="stage-2">
+                    <div class="stage-dot"></div>
+                    <div class="stage-meta" style="flex:1">
+                        <div class="stage-name">③ Wait for Logo Disappearance</div>
+                        <div class="stage-desc">Poll screen until OEM logo confidence drops below threshold (0.80)</div>
+                        <div class="stage-detail" id="detail-2">
+                            <div>🔄 Re-capturing every 1s, running logo detector</div>
+                            <div style="margin-top:5px;">⏱ Timeout window: <strong>60 seconds</strong></div>
+                            <div class="conf-bar-wrap">
+                                <div class="conf-label">Logo Confidence (fading out)</div>
+                                <div class="conf-bar"><div class="conf-fill" id="fill-2" style="background:linear-gradient(90deg,#f59e0b,#ef4444);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stage-badge" id="badge-2">PENDING</div>
+                </div>
+
+                <div class="stage" id="stage-3">
+                    <div class="stage-dot"></div>
+                    <div class="stage-meta" style="flex:1">
+                        <div class="stage-name">④ Detect Confirmation Button</div>
+                        <div class="stage-desc">Hybrid OCR + Template + YOLO — button at <strong id="btn-pos-label">random position</strong></div>
+                        <div class="stage-detail" id="detail-3">
+                            <div>🔍 Scanning for: <strong>OK, YES, Accept, Continue</strong></div>
+                            <div style="margin-top:5px;">🎯 Found: <strong id="btn-found-txt" style="color:#f59e0b;">—</strong> &nbsp;|&nbsp; Conf: <strong id="btn-conf-txt" style="color:#f59e0b;">—</strong></div>
+                            <div class="conf-bar-wrap">
+                                <div class="conf-label">Detection Confidence</div>
+                                <div class="conf-bar"><div class="conf-fill" id="fill-3" style="background:linear-gradient(90deg,#f59e0b,#eab308);"></div></div>
+                            </div>
+                            <div style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;" id="btn-coords">—</div>
+                        </div>
+                    </div>
+                    <div class="stage-badge" id="badge-3">PENDING</div>
+                </div>
+
+                <div class="stage" id="stage-4">
+                    <div class="stage-dot"></div>
+                    <div class="stage-meta" style="flex:1">
+                        <div class="stage-name">⑤ Execute Touch Tap</div>
+                        <div class="stage-desc">ADB tap at dynamic button center — coordinates vary each run</div>
+                        <div class="stage-detail" id="detail-4">
+                            <div id="tap-detail-txt">⚡ Executing: <code id="tap-cmd-txt">adb shell input tap ? ?</code></div>
+                            <div style="margin-top:5px;">💬 Response: <strong style="color:#22c55e;">Success</strong></div>
+                        </div>
+                    </div>
+                    <div class="stage-badge" id="badge-4">PENDING</div>
+                </div>
+
+                <div class="stage" id="stage-5">
+                    <div class="stage-dot"></div>
+                    <div class="stage-meta" style="flex:1">
+                        <div class="stage-name">⑥ Verify Screen Transition</div>
+                        <div class="stage-desc">Confirm disclaimer dismissed, main infotainment home screen loads</div>
+                        <div class="stage-detail" id="detail-5">
+                            <div>📷 Post-tap screen captured and analyzed</div>
+                            <div style="margin-top:5px;">✅ Button no longer detected — transition confirmed</div>
+                            <div style="margin-top:5px;color:#22c55e;font-weight:600;">🏠 Home screen loaded successfully</div>
+                        </div>
+                    </div>
+                    <div class="stage-badge" id="badge-5">PENDING</div>
+                </div>
+
+            </div><!-- /pipeline -->
+
+            <div style="margin-top:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+                <a class="report-link" id="report-link" href="reports/report.html" target="_blank">📄 Open Full HTML Report</a>
+                <div class="action-row">
+                    <button class="act-btn" id="step-btn" onclick="stepNext()">⏭ Step Next</button>
+                    <button class="act-btn danger" onclick="resetAll()">↺ Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+            <!-- SIMULATED SCREEN -->
+            <div class="screen-card">
+                <div class="section-title" style="margin-bottom:14px;">🖥 Infotainment Screen — Live View</div>
+                <div class="screen-viewport" id="viewport">
+                    <div class="screen-inner" id="screen-inner">
+
+                        <!-- IDLE -->
+                        <div class="screen-state active" id="screen-idle">
+                            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                                <div class="idle-icon">📱</div>
+                                <div class="idle-text">AWAITING AUTOMATION RUN</div>
+                            </div>
+                        </div>
+
+                        <!-- BOOT — logo positioned dynamically via JS -->
+                        <div class="screen-state" id="screen-boot">
+                            <div id="oem-logo">AUTOVEX</div>
+                            <div id="oem-tagline">INFOTAINMENT SYSTEM v4.2</div>
+                            <div id="boot-progress-wrap">
+                                <div class="boot-bar-track"><div id="boot-bar-fill"></div></div>
+                            </div>
+                            <!-- scan sweep while booting -->
+                            <div class="scan-sweep" id="scan-boot"></div>
+                        </div>
+
+                        <!-- LOGO DETECTED — same logo + green box -->
+                        <div class="screen-state" id="screen-logo-detect">
+                            <!-- Logo text cloned by JS -->
+                            <div id="oem-logo-clone" style="position:absolute;font-family:'Outfit',sans-serif;font-weight:800;letter-spacing:0.18em;background:linear-gradient(135deg,#ffffff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;"></div>
+                            <!-- Green bbox -->
+                            <div id="logo-bbox">
+                                <div id="logo-bbox-label">OEM_LOGO</div>
+                            </div>
+                            <!-- Center crosshair -->
+                            <div id="logo-center-dot"></div>
+                            <!-- scanlines -->
+                            <div class="scan-sweep active" id="scan-detect" style="animation-duration:0.6s;opacity:0.5;"></div>
+                        </div>
+
+                        <!-- DISCLAIMER — rendered by JS at random position -->
+                        <div class="screen-state" id="screen-disclaimer">
+                            <div id="dis-panel-1" class="dis-panel" style="width:75%;top:15%;left:12%;">
+                                <div class="dis-title">⚠ IMPORTANT SAFETY DISCLAIMER</div>
+                                <div class="dis-body">This infotainment system is intended for use only when the vehicle is stationary. Operating this system while driving is hazardous. By proceeding you agree to use this system responsibly. AUTOVEX assumes no liability.</div>
+                                <div class="dis-btns">
+                                    <button class="act-btn" style="padding:4px 12px;font-size:0.6rem;min-width:0;flex:0;border-radius:5px;pointer-events:none;">YES</button>
+                                    <button style="padding:4px 12px;font-size:0.6rem;border:none;border-radius:5px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;pointer-events:none;">OK</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BTN DETECT — disclaimer + amber bbox on dynamic button -->
+                        <div class="screen-state" id="screen-btn-detect">
+                            <div id="dis-panel-2" class="dis-panel" style="width:75%;top:15%;left:12%;">
+                                <div class="dis-title">⚠ IMPORTANT SAFETY DISCLAIMER</div>
+                                <div class="dis-body">This infotainment system is intended for use only when the vehicle is stationary. Operating this system while driving is hazardous.</div>
+                                <div class="dis-btns" id="dis-btns-2">
+                                    <button class="act-btn" style="padding:4px 12px;font-size:0.6rem;min-width:0;flex:0;border-radius:5px;pointer-events:none;">YES</button>
+                                    <button style="padding:4px 12px;font-size:0.6rem;border:none;border-radius:5px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;pointer-events:none;">OK</button>
+                                </div>
+                            </div>
+                            <!-- Dynamic amber button (floats separately over screen) -->
+                            <div id="dyn-btn"></div>
+                            <!-- Amber bbox -->
+                            <div id="btn-bbox">
+                                <div id="btn-bbox-label">BTN_OK</div>
+                            </div>
+                            <div id="btn-center-dot"></div>
+                        </div>
+
+                        <!-- TAP — same as btn-detect but with ripple -->
+                        <div class="screen-state" id="screen-tap">
+                            <div class="dis-panel" style="width:75%;top:15%;left:12%;">
+                                <div class="dis-title">⚠ IMPORTANT SAFETY DISCLAIMER</div>
+                                <div class="dis-body">ADB tap executing at button center...</div>
+                                <div class="dis-btns">
+                                    <button class="act-btn" style="padding:4px 12px;font-size:0.6rem;min-width:0;flex:0;border-radius:5px;pointer-events:none;">YES</button>
+                                    <button id="tap-ok-btn" style="padding:4px 12px;font-size:0.6rem;border:none;border-radius:5px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;pointer-events:none;">OK</button>
+                                </div>
+                            </div>
+                            <!-- Dynamic tap ripple spawned by JS -->
+                            <div id="tap-ripple-anchor" style="position:absolute;pointer-events:none;"></div>
+                        </div>
+
+                        <!-- HOME -->
+                        <div class="screen-state" id="screen-home">
+                            <div class="home-grid-wrap">
+                                <div class="home-top-bar">AUTOVEX INFOTAINMENT · HOME</div>
+                                <div class="home-icons">
+                                    <div class="home-icon" style="background:rgba(59,130,246,0.15);">🗺</div>
+                                    <div class="home-icon" style="background:rgba(34,197,94,0.15);">📻</div>
+                                    <div class="home-icon" style="background:rgba(168,85,247,0.15);">📞</div>
+                                    <div class="home-icon" style="background:rgba(245,158,11,0.15);">⚙️</div>
+                                    <div class="home-icon" style="background:rgba(239,68,68,0.15);">❄️</div>
+                                    <div class="home-icon" style="background:rgba(20,184,166,0.15);">🎵</div>
+                                    <div class="home-icon" style="background:rgba(99,102,241,0.15);">📱</div>
+                                    <div class="home-icon" style="background:rgba(251,146,60,0.15);">🔋</div>
+                                </div>
+                                <div class="home-status">✓ SYSTEM ACTIVE · ALL SERVICES RUNNING</div>
+                            </div>
+                        </div>
+
+                    </div><!-- /screen-inner -->
+                </div><!-- /screen-viewport -->
+                <div id="coord-display">No active capture</div>
+            </div>
+
+            <!-- LOG TERMINAL -->
+            <div class="log-card">
+                <div class="log-header">
+                    <div class="log-dots"><span></span><span></span><span></span></div>
+                    <div class="log-title">⚡ Live Action Log</div>
+                    <div style="font-size:0.7rem;color:var(--muted);" id="log-count">0 entries</div>
+                </div>
+                <div class="log-body" id="log-body">
+                    <div class="log-entry"><span class="ts">[--:--:--]</span> <span class="lvl-info">SYSTEM</span> <span class="msg">Logo Locator Tool initialized. Waiting for run command...</span></div>
+                    <span class="log-cursor"></span>
+                </div>
+            </div>
+
+        </div><!-- /right-panel -->
+    </div><!-- /main-grid -->
+
+</div><!-- /wrapper -->
+
+<script>
+// ============================================================
+//  RANDOMIZATION ENGINE
+// ============================================================
+
+// Viewport dimensions (% of viewport) — logo and button are placed
+// as percentage-based absolute positions inside the screen div
+
+let logoPos = {};   // { left%, top%, fontSize, conf, cx, cy, w, h }
+let btnPos  = {};   // { left%, top%, label, conf, cx, cy, w, h }
+
+// Logo name variants
+const OEM_NAMES = ['AUTOVEX', 'DRIVEX', 'VEXARO', 'MOTRIX', 'NEXDRIVE'];
+let chosenName = 'AUTOVEX';
+let chosenBtn  = 'OK';
+
+function rand(min, max) { return Math.random() * (max - min) + min; }
+function randInt(min, max) { return Math.floor(rand(min, max + 1)); }
+function pick(arr) { return arr[randInt(0, arr.length - 1)]; }
+
+function randomizePositions() {
+    // ---- OEM LOGO ----
+    // Keep it clearly visible: left 5–60%, top 10–65%, so it doesn't clip
+    const logoFontSize = rand(1.4, 2.4);       // rem
+    const logoW_pct   = logoFontSize * 9.5;    // approx width in % of viewport
+    const logoH_pct   = logoFontSize * 5;
+    const logoLeft    = rand(4, 90 - logoW_pct);
+    const logoTop     = rand(8, 75 - logoH_pct);
+
+    chosenName = pick(OEM_NAMES);
+    const logoConf = rand(0.87, 0.97);
+
+    logoPos = {
+        left: logoLeft, top: logoTop,
+        fontSize: logoFontSize,
+        conf: logoConf,
+        // BBox in percent
+        bx: logoLeft - 1, by: logoTop - 2,
+        bw: logoW_pct + 2, bh: logoH_pct + 4,
+        // center
+        cx: logoLeft + logoW_pct / 2,
+        cy: logoTop  + logoH_pct / 2,
+        // raw pixel-style coords (simulate 1280x720)
+        rx: Math.round(logoLeft * 12.8),
+        ry: Math.round(logoTop * 7.2),
+        rw: Math.round(logoW_pct * 12.8),
+        rh: Math.round(logoH_pct * 7.2),
+    };
+    logoPos.rcx = logoPos.rx + Math.round(logoPos.rw / 2);
+    logoPos.rcy = logoPos.ry + Math.round(logoPos.rh / 2);
+
+    // ---- BUTTON ----
+    const BTN_LABELS = ['OK', 'YES', 'Accept', 'Continue'];
+    chosenBtn = pick(BTN_LABELS);
+    const btnW_pct  = chosenBtn.length * 3.5 + 8;   // wider for longer labels
+    const btnH_pct  = 8;
+    const btnLeft   = rand(4, 92 - btnW_pct);
+    const btnTop    = rand(10, 85 - btnH_pct);
+    const btnConf   = rand(0.88, 0.98);
+
+    btnPos = {
+        left: btnLeft, top: btnTop,
+        w: btnW_pct, h: btnH_pct,
+        label: chosenBtn, conf: btnConf,
+        bx: btnLeft - 0.5, by: btnTop - 0.5,
+        bw: btnW_pct + 1,  bh: btnH_pct + 1,
+        cx: btnLeft + btnW_pct / 2,
+        cy: btnTop  + btnH_pct  / 2,
+        rx: Math.round(btnLeft * 12.8),
+        ry: Math.round(btnTop  * 7.2),
+        rw: Math.round(btnW_pct * 12.8),
+        rh: Math.round(btnH_pct * 7.2),
+    };
+    btnPos.rcx = btnPos.rx + Math.round(btnPos.rw / 2);
+    btnPos.rcy = btnPos.ry + Math.round(btnPos.rh / 2);
+}
+
+// ============================================================
+//  SCREEN RENDERING
+// ============================================================
+
+function setScreen(id) {
+    document.querySelectorAll('.screen-state').forEach(s => s.classList.remove('active'));
+    const el = document.getElementById(id);
+    if (el) el.classList.add('active');
+}
+
+function renderBootScreen() {
+    const logo = document.getElementById('oem-logo');
+    const tag  = document.getElementById('oem-tagline');
+    logo.textContent = chosenName;
+    logo.style.left  = logoPos.left + '%';
+    logo.style.top   = logoPos.top  + '%';
+    logo.style.fontSize = logoPos.fontSize + 'rem';
+
+    // tagline below logo
+    tag.style.left = logoPos.left + '%';
+    tag.style.top  = (logoPos.top + logoPos.bh + 1) + '%';
+    tag.style.fontSize = (logoPos.fontSize * 0.25) + 'rem';
+
+    // Animate boot bar
+    const bf = document.getElementById('boot-bar-fill');
+    bf.style.transition = 'none'; bf.style.width = '0';
+    setTimeout(() => { bf.style.transition = 'width 2s ease'; bf.style.width = '100%'; }, 60);
+
+    setScreen('screen-boot');
+    document.getElementById('coord-display').textContent = 'Booting device...';
+    document.getElementById('coord-display').className = '';
+}
+
+function renderLogoDetectScreen() {
+    // Clone logo text into detect screen
+    const clone = document.getElementById('oem-logo-clone');
+    clone.textContent = chosenName;
+    clone.style.left = logoPos.left + '%';
+    clone.style.top  = logoPos.top  + '%';
+    clone.style.fontSize = logoPos.fontSize + 'rem';
+
+    // Position green bbox
+    const bbox  = document.getElementById('logo-bbox');
+    const blabel= document.getElementById('logo-bbox-label');
+    const dot   = document.getElementById('logo-center-dot');
+
+    bbox.style.left   = logoPos.bx + '%';
+    bbox.style.top    = logoPos.by + '%';
+    bbox.style.width  = logoPos.bw + '%';
+    bbox.style.height = logoPos.bh + '%';
+    bbox.style.display = 'block';
+    // Remove and re-add to retrigger animation
+    bbox.style.animation = 'none'; bbox.offsetHeight;
+    bbox.style.animation = 'bboxAppear 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+
+    blabel.textContent = `${chosenName} (${(logoPos.conf * 100).toFixed(1)}%)`;
+
+    dot.style.left    = logoPos.cx + '%';
+    dot.style.top     = logoPos.cy + '%';
+    dot.style.display = 'block';
+
+    setScreen('screen-logo-detect');
+
+    const cd = document.getElementById('coord-display');
+    cd.className = 'logo-active';
+    cd.textContent = `🟢 LOGO BBox: x=${logoPos.rx} y=${logoPos.ry} w=${logoPos.rw} h=${logoPos.rh} · Center: (${logoPos.rcx}, ${logoPos.rcy})`;
+
+    // Update pipeline detail
+    document.getElementById('logo-method-txt').textContent = pick(['Template Match', 'YOLO v8', 'Template Match + YOLO']);
+    document.getElementById('logo-conf-txt').textContent = (logoPos.conf * 100).toFixed(1) + '%';
+    document.getElementById('logo-coords').textContent =
+        `BBox: x=${logoPos.rx}, y=${logoPos.ry}, w=${logoPos.rw}, h=${logoPos.rh}  |  Center: (${logoPos.rcx}, ${logoPos.rcy})`;
+    document.getElementById('logo-pos-label').textContent =
+        `(${logoPos.rcx}, ${logoPos.rcy})`;
+    document.getElementById('stat-method').textContent = 'Template';
+}
+
+function renderDisclaimerScreen(screenId) {
+    setScreen(screenId);
+    const cd = document.getElementById('coord-display');
+    cd.className = '';
+    cd.textContent = 'Disclaimer screen — waiting for button...';
+}
+
+function renderBtnDetectScreen() {
+    // Hide generic btn panel, show dynamic floating button
+    const dynBtn = document.getElementById('dyn-btn');
+    dynBtn.textContent  = btnPos.label;
+    dynBtn.style.left   = btnPos.left + '%';
+    dynBtn.style.top    = btnPos.top  + '%';
+    dynBtn.style.width  = btnPos.w + '%';
+    dynBtn.style.height = btnPos.h + '%';
+    dynBtn.style.fontSize = Math.max(0.55, btnPos.h * 0.07) + 'rem';
+    // Color by label
+    const colors = { OK: 'linear-gradient(135deg,#3b82f6,#8b5cf6)', YES: 'linear-gradient(135deg,#22c55e,#16a34a)', Accept: 'linear-gradient(135deg,#f59e0b,#d97706)', Continue: 'linear-gradient(135deg,#a855f7,#7c3aed)' };
+    dynBtn.style.background = colors[btnPos.label] || colors.OK;
+    dynBtn.style.color  = '#fff';
+    dynBtn.style.display = 'flex';
+    dynBtn.style.alignItems = 'center';
+    dynBtn.style.justifyContent = 'center';
+
+    // Position amber bbox
+    const bbox  = document.getElementById('btn-bbox');
+    const blabel= document.getElementById('btn-bbox-label');
+    const dot   = document.getElementById('btn-center-dot');
+
+    bbox.style.left   = btnPos.bx + '%';
+    bbox.style.top    = btnPos.by + '%';
+    bbox.style.width  = btnPos.bw + '%';
+    bbox.style.height = btnPos.bh + '%';
+    bbox.style.display = 'block';
+    bbox.style.animation = 'none'; bbox.offsetHeight;
+    bbox.style.animation = 'bboxAppear 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+
+    blabel.textContent = `BTN_${btnPos.label.toUpperCase()} (${(btnPos.conf * 100).toFixed(1)}%)`;
+
+    dot.style.left    = btnPos.cx + '%';
+    dot.style.top     = btnPos.cy + '%';
+    dot.style.display = 'block';
+
+    setScreen('screen-btn-detect');
+
+    const cd = document.getElementById('coord-display');
+    cd.className = 'btn-active';
+    cd.textContent = `🟡 BTN BBox: x=${btnPos.rx} y=${btnPos.ry} w=${btnPos.rw} h=${btnPos.rh} · Center: (${btnPos.rcx}, ${btnPos.rcy})`;
+
+    // Update pipeline detail
+    document.getElementById('btn-found-txt').textContent = `"${btnPos.label}" via OCR`;
+    document.getElementById('btn-conf-txt').textContent  = (btnPos.conf * 100).toFixed(1) + '%';
+    document.getElementById('btn-coords').textContent =
+        `BBox: x=${btnPos.rx}, y=${btnPos.ry}, w=${btnPos.rw}, h=${btnPos.rh}  |  Center: (${btnPos.rcx}, ${btnPos.rcy})`;
+    document.getElementById('btn-pos-label').textContent =
+        `(${btnPos.rcx}, ${btnPos.rcy})`;
+    document.getElementById('stat-method').textContent = 'OCR';
+
+    // Update tap command
+    document.getElementById('tap-cmd-txt').textContent =
+        `adb shell input tap ${btnPos.rcx} ${btnPos.rcy}`;
+}
+
+function renderTapScreen() {
+    setScreen('screen-tap');
+    // Spawn ripple at button center (% coords)
+    const anchor = document.getElementById('tap-ripple-anchor');
+    anchor.innerHTML = '';
+    const ripple = document.createElement('div');
+    ripple.className = 'tap-ripple';
+    ripple.style.left = btnPos.cx + '%';
+    ripple.style.top  = btnPos.cy + '%';
+    // Second ripple with delay
+    const ripple2 = document.createElement('div');
+    ripple2.className = 'tap-ripple';
+    ripple2.style.left = btnPos.cx + '%';
+    ripple2.style.top  = btnPos.cy + '%';
+    ripple2.style.animationDelay = '0.25s';
+    anchor.appendChild(ripple);
+    anchor.appendChild(ripple2);
+
+    document.getElementById('coord-display').textContent =
+        `⚡ Tapping at (${btnPos.rcx}, ${btnPos.rcy}) → adb shell input tap ${btnPos.rcx} ${btnPos.rcy}`;
+    document.getElementById('coord-display').className = 'btn-active';
+}
+
+// ============================================================
+//  LOGGING
+// ============================================================
+let logCount = 1;
+function now() {
+    const d = new Date();
+    return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`;
+}
+function log(level, msg, delay=0) {
+    setTimeout(() => {
+        const body = document.getElementById('log-body');
+        const cursor = body.querySelector('.log-cursor');
+        const entry = document.createElement('div');
+        entry.className = 'log-entry';
+        const cls = level==='PASS'?'lvl-pass':level==='FAIL'?'lvl-fail':level==='WARN'?'lvl-warn':'lvl-info';
+        entry.innerHTML = `<span class="ts">[${now()}]</span> <span class="${cls}">${level}</span> <span class="msg">${msg}</span>`;
+        if (cursor) body.insertBefore(entry, cursor); else body.appendChild(entry);
+        body.scrollTop = body.scrollHeight;
+        logCount++;
+        document.getElementById('log-count').textContent = `${logCount} entries`;
+    }, delay);
+}
+
+// ============================================================
+//  STAGE STATES
+// ============================================================
+function setStageState(idx, state) {
+    const stage = document.getElementById(`stage-${idx}`);
+    const badge = document.getElementById(`badge-${idx}`);
+    if (!stage) return;
+    stage.className = `stage ${state}`;
+    badge.textContent = {active:'RUNNING', pass:'PASS', fail:'FAIL'}[state] || 'PENDING';
+    const detail = document.getElementById(`detail-${idx}`);
+    if (detail && state !== 'idle') detail.classList.add('visible');
+}
+function animateFill(id, pct) {
+    if (!id) return;
+    setTimeout(() => { const el = document.getElementById(id); if (el) el.style.width = pct; }, 400);
+}
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ============================================================
+//  AUTOMATION RUNNER
+// ============================================================
+let currentStage = -1, isRunning = false, passCount = 0;
+let timerInterval = null, startTime = null;
+
+function buildStages() {
+    return [
+        {
+            label: 'ADB Connect & Boot Wait',
+            duration: 2200, fillId: 'fill-0', fillPct: '100%',
+            render: renderBootScreen,
+            logs: () => [
+                ['INFO', `Attempting ADB connection to device: mock`],
+                ['INFO', `Mock ADB: Connected to virtual device.`],
+                ['INFO', `Waiting for boot completion...`],
+                ['INFO', `Poll 1/3: sys.boot_completed = 0 (still booting)`],
+                ['INFO', `Poll 2/3: sys.boot_completed = 0`],
+                ['INFO', `Poll 3/3: sys.boot_completed = 1 → BOOT COMPLETE`],
+                ['PASS', `Step PASS: Wait Boot Completed (2.1s)`],
+            ]
+        },
+        {
+            label: 'Detect OEM Boot Logo',
+            duration: 2000, fillId: 'fill-1', fillPct: (logoPos.conf * 100).toFixed(0) + '%',
+            render: renderLogoDetectScreen,
+            logs: () => [
+                ['INFO', `Step 2: Detecting OEM boot logo on ${chosenName}...`],
+                ['INFO', `Capturing screen → boot_screen.png`],
+                ['INFO', `Running template matching on logo.png...`],
+                ['PASS', `OEM_LOGO detected! Confidence: ${(logoPos.conf * 100).toFixed(1)}%`],
+                ['INFO', `Bounding box: x=${logoPos.rx}, y=${logoPos.ry}, w=${logoPos.rw}, h=${logoPos.rh}`],
+                ['INFO', `Logo center: (${logoPos.rcx}, ${logoPos.rcy})`],
+                ['INFO', `Saving annotated image → logo_detected.png`],
+                ['PASS', `Step PASS: Detect Boot Logo (1.8s)`],
+            ]
+        },
+        {
+            label: 'Wait Logo Disappear',
+            duration: 2000, fillId: 'fill-2', fillPct: '8%',
+            render: () => renderDisclaimerScreen('screen-disclaimer'),
+            logs: () => [
+                ['INFO', `Step 3: Waiting for OEM logo to disappear...`],
+                ['INFO', `Mock: Logo visible (conf=${(logoPos.conf * 100).toFixed(1)}%) — waiting 1s`],
+                ['INFO', `Triggering mock state → DISCLAIMER`],
+                ['INFO', `Re-capturing → logo_check.png`],
+                ['INFO', `Logo detector confidence: 0.07 (below threshold 0.80)`],
+                ['PASS', `Logo gone! System transitioned to DISCLAIMER state`],
+                ['PASS', `Step PASS: Logo Disappear Check (2.0s)`],
+            ]
+        },
+        {
+            label: 'Detect Confirmation Button',
+            duration: 2200, fillId: 'fill-3', fillPct: (btnPos.conf * 100).toFixed(0) + '%',
+            render: renderBtnDetectScreen,
+            logs: () => [
+                ['INFO', `Step 4: Detecting confirmation buttons...`],
+                ['INFO', `Targets: ['OK', 'YES', 'Accept', 'Continue']`],
+                ['INFO', `Capturing screen → disclaimer_screen.png`],
+                ['INFO', `Running OCR mock metadata lookup...`],
+                ['PASS', `Button '${btnPos.label}' found via OCR! Confidence: ${(btnPos.conf * 100).toFixed(1)}%`],
+                ['INFO', `BBox: x=${btnPos.rx}, y=${btnPos.ry}, w=${btnPos.rw}, h=${btnPos.rh}`],
+                ['INFO', `Button center: (${btnPos.rcx}, ${btnPos.rcy})`],
+                ['PASS', `Step PASS: Detect Button (${btnPos.label}) (2.1s)`],
+            ]
+        },
+        {
+            label: 'Execute Touch Tap',
+            duration: 1400, fillId: null, fillPct: null,
+            render: renderTapScreen,
+            logs: () => [
+                ['INFO', `Step 5: Tapping button '${btnPos.label}' at (${btnPos.rcx}, ${btnPos.rcy})...`],
+                ['INFO', `Executing: adb shell input tap ${btnPos.rcx} ${btnPos.rcy}`],
+                ['PASS', `Mock ADB: Touch tap at (${btnPos.rcx}, ${btnPos.rcy}) SUCCESS`],
+                ['INFO', `Mock state → HOME (${btnPos.label} button pressed successfully)`],
+                ['PASS', `Step PASS: Execute Tap (0.04s)`],
+            ]
+        },
+        {
+            label: 'Verify Screen Transition',
+            duration: 1800, fillId: null, fillPct: null,
+            render: () => {
+                setScreen('screen-home');
+                document.getElementById('coord-display').className = '';
+                document.getElementById('coord-display').textContent = '✅ Home screen loaded — automation PASS';
+            },
+            logs: () => [
+                ['INFO', `Step 6: Verifying screen transition...`],
+                ['INFO', `Waiting 2s for animation to stabilize...`],
+                ['INFO', `Capturing → post_tap_screen.png`],
+                ['INFO', `Running button detector on post-tap screen...`],
+                ['INFO', `No '${btnPos.label}' button detected (conf < 0.80 threshold)`],
+                ['PASS', `Screen transitioned! Disclaimer dismissed successfully.`],
+                ['PASS', `Step PASS: Verify Screen Transition (1.8s)`],
+                ['PASS', `════════ AUTOMATION COMPLETE · RESULT: PASS ════════`],
+            ]
+        }
+    ];
+}
+
+async function runStage(idx, stages) {
+    const stg = stages[idx];
+    setStageState(idx, 'active');
+    if (stg.render) stg.render();
+    const lines = stg.logs();
+    lines.forEach((l, i) => log(l[0], l[1], i * 180));
+    if (stg.fillId) animateFill(stg.fillId, stg.fillPct);
+    await sleep(stg.duration);
+    setStageState(idx, 'pass');
+    passCount++;
+    document.getElementById('stat-pass').textContent = passCount;
+}
+
+async function startAutomation() {
+    if (isRunning) return;
+    isRunning = true; passCount = 0; currentStage = 0;
+
+    // Randomize every run
+    randomizePositions();
+
+    document.getElementById('run-btn').disabled = true;
+    document.getElementById('step-btn').disabled = true;
+    const badge = document.getElementById('status-badge');
+    badge.textContent = '● RUNNING'; badge.className = 'running';
+
+    startTime = Date.now();
+    timerInterval = setInterval(() => {
+        document.getElementById('stat-time').textContent = ((Date.now() - startTime) / 1000).toFixed(2) + 's';
+    }, 50);
+
+    resetStages(false);
+
+    log('INFO', '══════════════════════════════════════════════════');
+    log('INFO', 'Logo Locator Automation Tool — RUN STARTED', 50);
+    log('INFO', `Mock Mode: True | Device: mock | Brand: ${chosenName}`, 100);
+    log('INFO', `Logo seed pos: (${logoPos.rcx},${logoPos.rcy}) | Button seed pos: (${btnPos.rcx},${btnPos.rcy})`, 150);
+    log('INFO', '══════════════════════════════════════════════════', 200);
+
+    const stages = buildStages();
+    for (let i = 0; i < stages.length; i++) {
+        await runStage(i, stages);
+        await sleep(280);
+    }
+
+    clearInterval(timerInterval);
+    const total = ((Date.now() - startTime) / 1000).toFixed(2);
+    document.getElementById('stat-time').textContent = total + 's';
+    badge.textContent = '✓ PASS'; badge.className = 'pass';
+    document.getElementById('report-link').classList.add('visible');
+    log('INFO', `Total execution time: ${total}s`, 200);
+    isRunning = false;
+    document.getElementById('run-btn').disabled = false;
+}
+
+// ============================================================
+//  STEP MODE
+// ============================================================
+let stepStages = null;
+
+async function stepNext() {
+    if (isRunning) return;
+    if (currentStage === -1) {
+        randomizePositions();
+        stepStages = buildStages();
+        passCount = 0;
+        startTime = Date.now();
+        timerInterval = setInterval(() => {
+            document.getElementById('stat-time').textContent = ((Date.now() - startTime) / 1000).toFixed(2) + 's';
+        }, 50);
+        const badge = document.getElementById('status-badge');
+        badge.textContent = '● STEP MODE'; badge.className = 'running';
+        resetStages(false);
+        log('INFO', '══════════════════════════════════════════════════');
+        log('INFO', 'Step-by-step mode. Click "Step Next" to advance.', 50);
+        log('INFO', `Brand: ${chosenName} | Logo: (${logoPos.rcx},${logoPos.rcy}) | Btn: (${btnPos.rcx},${btnPos.rcy})`, 100);
+        currentStage = 0; return;
+    }
+    if (currentStage >= 6) return;
+    isRunning = true;
+    document.getElementById('step-btn').disabled = true;
+    document.getElementById('run-btn').disabled = true;
+    await runStage(currentStage, stepStages || buildStages());
+    currentStage++;
+    if (currentStage >= 6) {
+        clearInterval(timerInterval);
+        document.getElementById('status-badge').textContent = '✓ PASS';
+        document.getElementById('status-badge').className = 'pass';
+        document.getElementById('report-link').classList.add('visible');
+    }
+    isRunning = false;
+    document.getElementById('step-btn').disabled = false;
+    document.getElementById('run-btn').disabled = false;
+}
+
+// ============================================================
+//  RESET
+// ============================================================
+function resetStages(fullReset = true) {
+    for (let i = 0; i < 6; i++) {
+        const s = document.getElementById(`stage-${i}`);
+        const b = document.getElementById(`badge-${i}`);
+        if (s) s.className = 'stage';
+        if (b) b.textContent = 'PENDING';
+        const d = document.getElementById(`detail-${i}`);
+        if (d) d.classList.remove('visible');
+        const f = document.getElementById(`fill-${i}`);
+        if (f) { f.style.transition = 'none'; f.style.width = '0'; setTimeout(() => { if (f) f.style.transition = 'width 1s cubic-bezier(0.4,0,0.2,1)'; }, 60); }
+    }
+    // Hide detection overlays
+    ['logo-bbox','logo-center-dot','btn-bbox','btn-center-dot','dyn-btn'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.style.display = 'none';
+    });
+    if (fullReset) {
+        document.getElementById('coord-display').textContent = 'No active capture';
+        document.getElementById('coord-display').className = '';
+    }
+}
+
+function resetAll() {
+    if (timerInterval) clearInterval(timerInterval);
+    isRunning = false; passCount = 0; currentStage = -1; logCount = 1; stepStages = null;
+    document.getElementById('run-btn').disabled = false;
+    document.getElementById('step-btn').disabled = false;
+    document.getElementById('stat-time').textContent = '0.00s';
+    document.getElementById('stat-pass').textContent = '0';
+    document.getElementById('stat-method').textContent = '—';
+    document.getElementById('report-link').classList.remove('visible');
+    document.getElementById('logo-pos-label').textContent = 'random position';
+    document.getElementById('btn-pos-label').textContent  = 'random position';
+    const badge = document.getElementById('status-badge');
+    badge.textContent = '● IDLE'; badge.className = '';
+    resetStages(true);
+    setScreen('screen-idle');
+    document.getElementById('log-body').innerHTML =
+        `<div class="log-entry"><span class="ts">[--:--:--]</span> <span class="lvl-info">SYSTEM</span> <span class="msg">Dashboard reset. Ready to run — logo &amp; button will randomize on next run.</span></div><span class="log-cursor"></span>`;
+    document.getElementById('log-count').textContent = '1 entry';
+}
+</script>
+</body>
+</html>

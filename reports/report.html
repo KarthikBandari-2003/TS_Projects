@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Locator Tool - Automation Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0b0f19;
+            color: #f8fafc;
+        }
+        .glass {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="p-6 md:p-12 min-h-screen">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                    Logo Locator Automation Report
+                </h1>
+                <p class="text-slate-400 mt-1">Automated validation for Automotive Infotainment Displays</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-sm text-slate-400">Report generated at: <span class="text-slate-200 font-medium">2026-07-15 15:26:16</span></span>
+            </div>
+        </header>
+
+        <!-- Status Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Overall Status -->
+            <div class="glass rounded-2xl p-6 flex flex-col justify-between">
+                <span class="text-slate-400 text-sm font-medium">Overall Status</span>
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="text-3xl font-bold" style="color: #22c55e">PASS</span>
+                    <span class="w-8 h-8 rounded-full flex items-center justify-center font-bold" style="background-color: rgba(34, 197, 94, 0.15); color: #22c55e">
+                        ✓
+                    </span>
+                </div>
+            </div>
+            <!-- Device ID -->
+            <div class="glass rounded-2xl p-6 flex flex-col justify-between">
+                <span class="text-slate-400 text-sm font-medium">Infotainment Device</span>
+                <div class="mt-4">
+                    <span class="text-2xl font-bold text-slate-100">MOCK</span>
+                    <span class="block text-xs text-blue-400 mt-1 font-semibold">ADB Connected</span>
+                </div>
+            </div>
+            <!-- Duration -->
+            <div class="glass rounded-2xl p-6 flex flex-col justify-between">
+                <span class="text-slate-400 text-sm font-medium">Execution Time</span>
+                <div class="mt-4">
+                    <span class="text-3xl font-bold text-slate-100">60.21s</span>
+                    <span class="block text-xs text-slate-400 mt-1">Total time elapsed</span>
+                </div>
+            </div>
+            <!-- Steps Executed -->
+            <div class="glass rounded-2xl p-6 flex flex-col justify-between">
+                <span class="text-slate-400 text-sm font-medium">Steps Logged</span>
+                <div class="mt-4">
+                    <span class="text-3xl font-bold text-slate-100">6</span>
+                    <span class="block text-xs text-slate-400 mt-1">Checks and interactions</span>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Timeline -->
+        <div class="glass rounded-3xl p-6 md:p-8">
+            <h2 class="text-xl font-bold text-slate-100 mb-6">Execution Steps Timeline</h2>
+            <div class="mt-4 flex flex-col">
+                
+            <div class="timeline-item border-l-2 border-slate-700 pl-6 pb-8 relative last:pb-0">
+                <!-- Status Dot -->
+                <div class="absolute w-4 h-4 rounded-full -left-[9px] top-1" style="background-color: #22c55e; box-shadow: 0 0 10px #22c55e"></div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-lg font-semibold text-slate-200">Wait Boot Completed</h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-slate-800 text-slate-400 px-2.5 py-1 rounded-md">15:26:08</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md font-semibold" style="color: #22c55e; bg: rgba(0,0,0,0.1)">PASS</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded-md">1505 ms</span>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-400 mt-2">Infotainment boot completion verified via getprop</p>
+                
+            </div>
+            
+            <div class="timeline-item border-l-2 border-slate-700 pl-6 pb-8 relative last:pb-0">
+                <!-- Status Dot -->
+                <div class="absolute w-4 h-4 rounded-full -left-[9px] top-1" style="background-color: #22c55e; box-shadow: 0 0 10px #22c55e"></div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-lg font-semibold text-slate-200">Detect Boot Logo</h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-slate-800 text-slate-400 px-2.5 py-1 rounded-md">15:26:10</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md font-semibold" style="color: #22c55e; bg: rgba(0,0,0,0.1)">PASS</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded-md">1851 ms</span>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-400 mt-2">OEM logo detected at bounding box x=540, y=260, w=200, h=200 with confidence 100.00%</p>
+                
+                    <div class="image-container mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs text-slate-400 block mb-1">Raw Screen Capture</span>
+                            <img src="boot_screen_20260715_152608.png" class="rounded-lg border border-slate-700 w-full object-contain cursor-pointer max-h-60" onclick="window.open('boot_screen_20260715_152608.png')">
+                        </div>
+                        <div>
+                            <span class="text-xs text-green-400 font-medium block mb-1">Detected Element Overlay</span>
+                            <img src="logo_detected.png" class="rounded-lg border border-slate-700 w-full object-contain cursor-pointer max-h-60" onclick="window.open('logo_detected.png')">
+                        </div>
+                    </div>
+                    
+            </div>
+            
+            <div class="timeline-item border-l-2 border-slate-700 pl-6 pb-8 relative last:pb-0">
+                <!-- Status Dot -->
+                <div class="absolute w-4 h-4 rounded-full -left-[9px] top-1" style="background-color: #22c55e; box-shadow: 0 0 10px #22c55e"></div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-lg font-semibold text-slate-200">Logo Disappear Check</h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-slate-800 text-slate-400 px-2.5 py-1 rounded-md">15:26:12</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md font-semibold" style="color: #22c55e; bg: rgba(0,0,0,0.1)">PASS</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded-md">2410 ms</span>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-400 mt-2">Boot logo disappeared successfully. System transitioned to disclaimer screen.</p>
+                
+            </div>
+            
+            <div class="timeline-item border-l-2 border-slate-700 pl-6 pb-8 relative last:pb-0">
+                <!-- Status Dot -->
+                <div class="absolute w-4 h-4 rounded-full -left-[9px] top-1" style="background-color: #22c55e; box-shadow: 0 0 10px #22c55e"></div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-lg font-semibold text-slate-200">Detect Button (OK)</h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-slate-800 text-slate-400 px-2.5 py-1 rounded-md">15:26:13</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md font-semibold" style="color: #22c55e; bg: rgba(0,0,0,0.1)">PASS</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded-md">706 ms</span>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-400 mt-2">Found 'OK' button dynamically using template_matching at bounding box x=850, y=520, w=120, h=50. Calculated center coordinate is (910, 545).</p>
+                
+                    <div class="image-container mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs text-slate-400 block mb-1">Raw Screen Capture</span>
+                            <img src="disclaimer_screen_1_20260715_152612.png" class="rounded-lg border border-slate-700 w-full object-contain cursor-pointer max-h-60" onclick="window.open('disclaimer_screen_1_20260715_152612.png')">
+                        </div>
+                        <div>
+                            <span class="text-xs text-green-400 font-medium block mb-1">Detected Element Overlay</span>
+                            <img src="button_detected.png" class="rounded-lg border border-slate-700 w-full object-contain cursor-pointer max-h-60" onclick="window.open('button_detected.png')">
+                        </div>
+                    </div>
+                    
+            </div>
+            
+            <div class="timeline-item border-l-2 border-slate-700 pl-6 pb-8 relative last:pb-0">
+                <!-- Status Dot -->
+                <div class="absolute w-4 h-4 rounded-full -left-[9px] top-1" style="background-color: #22c55e; box-shadow: 0 0 10px #22c55e"></div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-lg font-semibold text-slate-200">Execute Tap</h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-slate-800 text-slate-400 px-2.5 py-1 rounded-md">15:26:13</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md font-semibold" style="color: #22c55e; bg: rgba(0,0,0,0.1)">PASS</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded-md">11 ms</span>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-400 mt-2">Tapped 'OK' button center coordinate (910, 545)</p>
+                
+            </div>
+            
+            <div class="timeline-item border-l-2 border-slate-700 pl-6 pb-8 relative last:pb-0">
+                <!-- Status Dot -->
+                <div class="absolute w-4 h-4 rounded-full -left-[9px] top-1" style="background-color: #22c55e; box-shadow: 0 0 10px #22c55e"></div>
+                
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-lg font-semibold text-slate-200">Verify Screen Transition</h3>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-slate-800 text-slate-400 px-2.5 py-1 rounded-md">15:26:16</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md font-semibold" style="color: #22c55e; bg: rgba(0,0,0,0.1)">PASS</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded-md">2128 ms</span>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-400 mt-2">Screen transitioned successfully. Disclaimer pop-up dismissed and main screen loaded.</p>
+                
+                    <div class="image-container mt-4">
+                        <span class="text-xs text-slate-400 block mb-1">Screen Capture</span>
+                        <img src="post_tap_screen_20260715_152615.png" class="rounded-lg border border-slate-700 max-w-md object-contain cursor-pointer max-h-60" onclick="window.open('post_tap_screen_20260715_152615.png')">
+                    </div>
+                    
+            </div>
+            
+            </div>
+        </div>
+        
+        <footer class="mt-12 text-center text-xs text-slate-500">
+            Logo Locator Automation Tool &bull; Powered by Python, OpenCV & OCR
+        </footer>
+    </div>
+</body>
+</html>

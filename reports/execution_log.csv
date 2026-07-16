@@ -1,0 +1,146 @@
+Timestamp,Device,Step,Status,Coordinates,ExecutionTimeMs,Details
+2026-07-08 12:40:46,mock,Wait Boot Completed,PASS,N/A,1502,System booted successfully
+2026-07-08 12:40:46,mock,Detect Boot Logo,PASS,"(540,260)",159,Logo found with 100.00% confidence
+2026-07-08 12:40:47,mock,Logo Disappear Check,PASS,N/A,1103,Logo disappeared; disclaimer screen active
+2026-07-08 12:40:47,mock,Detect Button (OK),PASS,"(910,545)",84,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-08 12:40:48,mock,Execute Tap,PASS,"(910,545)",1,Tapped button 'OK' successfully
+2026-07-08 12:40:50,mock,Verify Screen Transition,PASS,N/A,2014,Disclaimer dismissed successfully. Next screen verified.
+2026-07-08 13:08:18,mock,Wait Boot Completed,PASS,N/A,1503,System booted successfully
+2026-07-08 13:08:18,mock,Detect Boot Logo,PASS,"(540,260)",193,Logo found with 100.00% confidence
+2026-07-08 13:08:19,mock,Logo Disappear Check,PASS,N/A,1147,Logo disappeared; disclaimer screen active
+2026-07-08 13:08:19,mock,Detect Button (OK),PASS,"(910,545)",116,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-08 13:08:19,mock,Execute Tap,PASS,"(910,545)",1,Tapped button 'OK' successfully
+2026-07-08 13:08:21,mock,Verify Screen Transition,PASS,N/A,2007,Disclaimer dismissed successfully. Next screen verified.
+2026-07-08 13:09:54,mock,Wait Boot Completed,PASS,N/A,1502,System booted successfully
+2026-07-08 13:09:55,mock,Detect Boot Logo,PASS,"(540,260)",678,Logo found with 100.00% confidence
+2026-07-08 13:09:56,mock,Logo Disappear Check,PASS,N/A,1532,Logo disappeared; disclaimer screen active
+2026-07-08 13:09:57,mock,Detect Button (OK),PASS,"(910,545)",519,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-08 13:09:57,mock,Execute Tap,PASS,"(910,545)",1,Tapped button 'OK' successfully
+2026-07-08 13:09:59,mock,Verify Screen Transition,PASS,N/A,2008,Disclaimer dismissed successfully. Next screen verified.
+2026-07-08 13:10:40,mock,Wait Boot Completed,PASS,N/A,1537,System booted successfully
+2026-07-08 13:10:41,mock,Detect Boot Logo,PASS,"(540,260)",1125,Logo found with 100.00% confidence
+2026-07-08 13:12:47,mock,Wait Boot Completed,PASS,N/A,1502,System booted successfully
+2026-07-08 13:12:47,mock,Detect Boot Logo,PASS,"(540,260)",841,Logo found with 100.00% confidence
+2026-07-08 13:12:49,mock,Logo Disappear Check,PASS,N/A,1397,Logo disappeared; disclaimer screen active
+2026-07-08 13:12:49,mock,Detect Button (OK),PASS,"(910,545)",447,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-08 13:12:49,mock,Execute Tap,PASS,"(910,545)",2,Tapped button 'OK' successfully
+2026-07-08 13:12:52,mock,Verify Screen Transition,PASS,N/A,2004,Disclaimer dismissed successfully. Next screen verified.
+2026-07-08 13:14:28,mock,Wait Boot Completed,PASS,N/A,1504,System booted successfully
+2026-07-08 13:14:29,mock,Detect Boot Logo,PASS,"(540,260)",781,Logo found with 100.00% confidence
+2026-07-08 13:14:31,mock,Logo Disappear Check,PASS,N/A,1509,Logo disappeared; disclaimer screen active
+2026-07-08 13:14:31,mock,Detect Button (OK),PASS,"(910,545)",483,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-08 13:14:31,mock,Execute Tap,PASS,"(910,545)",1,Tapped button 'OK' successfully
+2026-07-08 13:14:34,mock,Verify Screen Transition,PASS,N/A,2009,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:14:00,mock,Wait Boot Completed,PASS,N/A,1519,System booted successfully
+2026-07-09 16:14:01,mock,Detect Boot Logo,PASS,"(540,260)",751,Logo found with 100.00% confidence
+2026-07-09 16:14:02,mock,Logo Disappear Check,PASS,N/A,1452,Logo disappeared; disclaimer screen active
+2026-07-09 16:14:03,mock,Detect Button (OK),PASS,"(910,545)",472,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:14:03,mock,Execute Tap,PASS,"(910,545)",2,Tapped button 'OK' successfully
+2026-07-09 16:14:05,mock,Verify Screen Transition,PASS,N/A,2010,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:30:52,mock,Wait Boot Completed,PASS,N/A,1504,System booted successfully
+2026-07-09 16:30:54,mock,Detect Boot Logo,PASS,"(540,260)",1872,Logo found with 100.00% confidence
+2026-07-09 16:30:56,mock,Logo Disappear Check,PASS,N/A,1768,Logo disappeared; disclaimer screen active
+2026-07-09 16:30:57,mock,Detect Button (OK),PASS,"(910,545)",1427,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:30:58,mock,Execute Tap,PASS,"(910,545)",19,Tapped button 'OK' successfully
+2026-07-09 16:31:00,mock,Verify Screen Transition,PASS,N/A,2054,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:41:15,mock,Wait Boot Completed,PASS,N/A,1511,System booted successfully
+2026-07-09 16:41:17,mock,Detect Boot Logo,PASS,"(540,260)",1890,Logo found with 100.00% confidence
+2026-07-09 16:41:19,mock,Logo Disappear Check,PASS,N/A,1605,Logo disappeared; disclaimer screen active
+2026-07-09 16:41:20,mock,Detect Button (OK),PASS,"(910,545)",1289,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:41:20,mock,Execute Tap,PASS,"(910,545)",8,Tapped button 'OK' successfully
+2026-07-09 16:41:24,mock,Verify Screen Transition,PASS,N/A,2063,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:44:02,mock,Wait Boot Completed,PASS,N/A,1502,System booted successfully
+2026-07-09 16:44:04,mock,Detect Boot Logo,PASS,"(540,260)",1572,Logo found with 100.00% confidence
+2026-07-09 16:44:05,mock,Logo Disappear Check,PASS,N/A,1412,Logo disappeared; disclaimer screen active
+2026-07-09 16:44:06,mock,Detect Button (OK),PASS,"(910,545)",481,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:44:06,mock,Execute Tap,PASS,"(910,545)",237,Tapped button 'OK' successfully
+2026-07-09 16:44:09,mock,Verify Screen Transition,PASS,N/A,2005,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:45:10,mock,Wait Boot Completed,PASS,N/A,1829,System booted successfully
+2026-07-09 16:45:13,mock,Detect Boot Logo,PASS,"(540,260)",2495,Logo found with 100.00% confidence
+2026-07-09 16:45:14,mock,Logo Disappear Check,PASS,N/A,1356,Logo disappeared; disclaimer screen active
+2026-07-09 16:45:15,mock,Detect Button (OK),PASS,"(910,545)",407,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:45:15,mock,Execute Tap,PASS,"(910,545)",3,Tapped button 'OK' successfully
+2026-07-09 16:45:17,mock,Verify Screen Transition,PASS,N/A,2012,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:47:39,mock,Wait Boot Completed,PASS,N/A,1609,System booted successfully
+2026-07-09 16:47:39,mock,Detect Boot Logo,PASS,"(540,260)",604,Logo found with 100.00% confidence
+2026-07-09 16:47:41,mock,Logo Disappear Check,PASS,N/A,1428,Logo disappeared; disclaimer screen active
+2026-07-09 16:47:41,mock,Detect Button (OK),PASS,"(910,545)",620,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:47:42,mock,Execute Tap,PASS,"(910,545)",380,Tapped button 'OK' successfully
+2026-07-09 16:47:44,mock,Verify Screen Transition,PASS,N/A,2095,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:49:15,mock,Wait Boot Completed,PASS,N/A,1554,System booted successfully
+2026-07-09 16:49:19,mock,Detect Boot Logo,PASS,"(540,260)",3162,Logo found with 100.00% confidence
+2026-07-09 16:49:20,mock,Logo Disappear Check,PASS,N/A,1646,Logo disappeared; disclaimer screen active
+2026-07-09 16:49:22,mock,Detect Button (OK),PASS,"(910,545)",1287,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:49:22,mock,Execute Tap,PASS,"(910,545)",7,Tapped button 'OK' successfully
+2026-07-09 16:49:24,mock,Verify Screen Transition,PASS,N/A,2041,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:51:07,mock,Wait Boot Completed,PASS,N/A,1535,System booted successfully
+2026-07-09 16:51:09,mock,Detect Boot Logo,PASS,"(540,260)",1900,Logo found with 100.00% confidence
+2026-07-09 16:51:11,mock,Logo Disappear Check,PASS,N/A,2360,Logo disappeared; disclaimer screen active
+2026-07-09 16:51:11,mock,Detect Button (OK),PASS,"(910,545)",384,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:51:12,mock,Execute Tap,PASS,"(910,545)",3,Tapped button 'OK' successfully
+2026-07-09 16:51:14,mock,Verify Screen Transition,PASS,N/A,2007,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:52:43,mock,Wait Boot Completed,PASS,N/A,1504,System booted successfully
+2026-07-09 16:52:44,mock,Detect Boot Logo,PASS,"(540,260)",801,Logo found with 100.00% confidence
+2026-07-09 16:52:45,mock,Logo Disappear Check,PASS,N/A,1381,Logo disappeared; disclaimer screen active
+2026-07-09 16:52:46,mock,Detect Button (OK),PASS,"(910,545)",366,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:52:46,mock,Execute Tap,PASS,"(910,545)",2,Tapped button 'OK' successfully
+2026-07-09 16:52:48,mock,Verify Screen Transition,PASS,N/A,2016,Disclaimer dismissed successfully. Next screen verified.
+2026-07-09 16:54:53,mock,Wait Boot Completed,PASS,N/A,1506,System booted successfully
+2026-07-09 16:54:55,mock,Detect Boot Logo,PASS,"(540,260)",2141,Logo found with 100.00% confidence
+2026-07-09 16:54:57,mock,Logo Disappear Check,PASS,N/A,1477,Logo disappeared; disclaimer screen active
+2026-07-09 16:54:58,mock,Detect Button (OK),PASS,"(910,545)",565,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-09 16:54:58,mock,Execute Tap,PASS,"(910,545)",14,Tapped button 'OK' successfully
+2026-07-09 16:55:01,mock,Verify Screen Transition,PASS,N/A,2279,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 12:31:36,mock,Wait Boot Completed,PASS,N/A,1502,System booted successfully
+2026-07-15 12:31:37,mock,Detect Boot Logo,PASS,"(540,260)",754,Logo found with 100.00% confidence
+2026-07-15 12:31:38,mock,Logo Disappear Check,PASS,N/A,1277,Logo disappeared; disclaimer screen active
+2026-07-15 12:31:39,mock,Detect Button (OK),PASS,"(910,545)",306,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 12:31:39,mock,Execute Tap,PASS,"(910,545)",3,Tapped button 'OK' successfully
+2026-07-15 12:31:41,mock,Verify Screen Transition,PASS,N/A,2005,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 12:41:28,mock,Wait Boot Completed,PASS,N/A,1503,System booted successfully
+2026-07-15 12:41:29,mock,Detect Boot Logo,PASS,"(540,260)",756,Logo found with 100.00% confidence
+2026-07-15 12:41:31,mock,Logo Disappear Check,PASS,N/A,1476,Logo disappeared; disclaimer screen active
+2026-07-15 12:41:31,mock,Detect Button (OK),PASS,"(910,545)",287,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 12:41:31,mock,Execute Tap,PASS,"(910,545)",0,Tapped button 'OK' successfully
+2026-07-15 12:41:33,mock,Verify Screen Transition,PASS,N/A,2009,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 12:43:53,mock,Wait Boot Completed,PASS,N/A,1517,System booted successfully
+2026-07-15 12:43:54,mock,Detect Boot Logo,PASS,"(540,260)",1019,Logo found with 100.00% confidence
+2026-07-15 12:43:56,mock,Logo Disappear Check,PASS,N/A,1490,Logo disappeared; disclaimer screen active
+2026-07-15 12:43:56,mock,Detect Button (OK),PASS,"(910,545)",412,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 12:43:56,mock,Execute Tap,PASS,"(910,545)",1,Tapped button 'OK' successfully
+2026-07-15 12:43:59,mock,Verify Screen Transition,PASS,N/A,2005,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 12:46:19,mock,Wait Boot Completed,PASS,N/A,1502,System booted successfully
+2026-07-15 12:46:19,mock,Detect Boot Logo,PASS,"(540,260)",382,Logo found with 100.00% confidence
+2026-07-15 12:46:21,mock,Logo Disappear Check,PASS,N/A,1233,Logo disappeared; disclaimer screen active
+2026-07-15 12:46:21,mock,Detect Button (OK),PASS,"(910,545)",405,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 12:46:21,mock,Execute Tap,PASS,"(910,545)",3,Tapped button 'OK' successfully
+2026-07-15 12:46:23,mock,Verify Screen Transition,PASS,N/A,2005,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 15:08:42,mock,Wait Boot Completed,PASS,N/A,1504,System booted successfully
+2026-07-15 15:08:43,mock,Detect Boot Logo,PASS,"(540,260)",841,Logo found with 100.00% confidence
+2026-07-15 15:08:45,mock,Logo Disappear Check,PASS,N/A,1256,Logo disappeared; disclaimer screen active
+2026-07-15 15:08:45,mock,Detect Button (OK),PASS,"(910,545)",316,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 15:08:45,mock,Execute Tap,PASS,"(910,545)",1,Tapped button 'OK' successfully
+2026-07-15 15:08:48,mock,Verify Screen Transition,PASS,N/A,2101,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 15:09:56,mock,Wait Boot Completed,PASS,N/A,1508,System booted successfully
+2026-07-15 15:09:57,mock,Detect Boot Logo,PASS,"(540,260)",1130,Logo found with 100.00% confidence
+2026-07-15 15:09:59,mock,Logo Disappear Check,PASS,N/A,1550,Logo disappeared; disclaimer screen active
+2026-07-15 15:09:59,mock,Detect Button (OK),PASS,"(910,545)",724,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 15:09:59,mock,Execute Tap,PASS,"(910,545)",1,Tapped button 'OK' successfully
+2026-07-15 15:10:02,mock,Verify Screen Transition,PASS,N/A,2012,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 15:23:23,mock,Wait Boot Completed,PASS,N/A,1570,System booted successfully
+2026-07-15 15:23:28,mock,Detect Boot Logo,PASS,"(540,260)",5128,Logo found with 100.00% confidence
+2026-07-15 15:23:33,mock,Logo Disappear Check,PASS,N/A,4470,Logo disappeared; disclaimer screen active
+2026-07-15 15:23:38,mock,Detect Button (OK),PASS,"(910,545)",5368,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 15:23:38,mock,Execute Tap,PASS,"(910,545)",18,Tapped button 'OK' successfully
+2026-07-15 15:23:48,mock,Verify Screen Transition,PASS,N/A,2285,Disclaimer dismissed successfully. Next screen verified.
+2026-07-15 15:26:08,mock,Wait Boot Completed,PASS,N/A,1505,System booted successfully
+2026-07-15 15:26:10,mock,Detect Boot Logo,PASS,"(540,260)",1851,Logo found with 100.00% confidence
+2026-07-15 15:26:12,mock,Logo Disappear Check,PASS,N/A,2410,Logo disappeared; disclaimer screen active
+2026-07-15 15:26:13,mock,Detect Button (OK),PASS,"(910,545)",706,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-15 15:26:13,mock,Execute Tap,PASS,"(910,545)",11,Tapped button 'OK' successfully
+2026-07-15 15:26:16,mock,Verify Screen Transition,PASS,N/A,2128,Disclaimer dismissed successfully. Next screen verified.
+2026-07-16 11:06:23,mock,Wait Boot Completed,PASS,N/A,1610,System booted successfully
+2026-07-16 11:06:26,mock,Detect Boot Logo,PASS,"(540,260)",2874,Logo found with 100.00% confidence
+2026-07-16 11:06:28,mock,Logo Disappear Check,PASS,N/A,1585,Logo disappeared; disclaimer screen active
+2026-07-16 11:06:29,mock,Detect Button (OK),PASS,"(910,545)",1558,Found 'OK' via template_matching (Confidence: 100.00%)
+2026-07-16 11:06:30,mock,Execute Tap,PASS,"(910,545)",21,Tapped button 'OK' successfully

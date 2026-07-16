@@ -1,0 +1,28 @@
+{
+  "device_id": "mock",
+  "mock_mode": true,
+  "detection_order": ["yolo", "ocr", "template"],
+  "confidence_thresholds": {
+    "yolo": 0.35,
+    "ocr": 0.80,
+    "template": 0.80
+  },
+  "timeouts": {
+    "boot_timeout_sec": 60,
+    "logo_detect_timeout_sec": 15,
+    "logo_disappear_timeout_sec": 60,
+    "button_detect_timeout_sec": 20
+  },
+  "button_labels": ["OK", "YES", "Accept", "Continue"],
+  "yolo_logo_model": "config/yolov8n_logo_button.pt",
+  "yolo_button_model": "config/yolov8n_logo_button.pt",
+  "paths": {
+    "logo_template": "images/logo.png",
+    "ok_button_template": "images/ok_button.png",
+    "yes_button_template": "images/yes_button.png",
+    "mock_screens_dir": "scratch",
+    "screenshots_dir": "screenshots",
+    "reports_dir": "reports",
+    "logs_dir": "logs"
+  }
+}

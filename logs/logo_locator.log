@@ -1,0 +1,1131 @@
+[2026-07-08 12:40:45] [INFO] ============================================================
+[2026-07-08 12:40:45] [INFO] Logo Locator Automation Tool Started
+[2026-07-08 12:40:45] [INFO] Mock Mode: True
+[2026-07-08 12:40:45] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-08 12:40:45] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-08 12:40:45] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-08 12:40:45] [INFO] Waiting for boot completion...
+[2026-07-08 12:40:46] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-08 12:40:46] [INFO] Boot completed!
+[2026-07-08 12:40:46] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1502ms | System booted successfully
+[2026-07-08 12:40:46] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-08 12:40:46] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_124046.png (State: LOGO_SHOWN)
+[2026-07-08 12:40:46] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_124046.png
+[2026-07-08 12:40:46] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-08 12:40:46] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 159ms | Logo found with 100.00% confidence
+[2026-07-08 12:40:46] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-08 12:40:46] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-08 12:40:47] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-08 12:40:47] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_124047.png (State: DISCLAIMER)
+[2026-07-08 12:40:47] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_124047.png
+[2026-07-08 12:40:47] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-08 12:40:47] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1103ms | Logo disappeared; disclaimer screen active
+[2026-07-08 12:40:47] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-08 12:40:47] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_124047.png (State: DISCLAIMER)
+[2026-07-08 12:40:47] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_124047.png
+[2026-07-08 12:40:47] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-08 12:40:47] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 84ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-08 12:40:48] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-08 12:40:48] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-08 12:40:48] [INFO] Tapping coordinates (910, 545)...
+[2026-07-08 12:40:48] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-08 12:40:48] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-08 12:40:48] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-08 12:40:48] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 1ms | Tapped button 'OK' successfully
+[2026-07-08 12:40:48] [INFO] Step 6: Verifying screen transition...
+[2026-07-08 12:40:50] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_124050.png (State: HOME)
+[2026-07-08 12:40:50] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_124050.png
+[2026-07-08 12:40:50] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2014ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-08 12:40:50] [INFO] Automation execution completed successfully in 5.07 seconds.
+[2026-07-08 12:40:50] [INFO] ============================================================
+[2026-07-08 12:40:50] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-08 13:08:16] [INFO] ============================================================
+[2026-07-08 13:08:16] [INFO] Logo Locator Automation Tool Started
+[2026-07-08 13:08:16] [INFO] Mock Mode: True
+[2026-07-08 13:08:16] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-08 13:08:16] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-08 13:08:17] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-08 13:08:17] [INFO] Waiting for boot completion...
+[2026-07-08 13:08:18] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-08 13:08:18] [INFO] Boot completed!
+[2026-07-08 13:08:18] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1503ms | System booted successfully
+[2026-07-08 13:08:18] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-08 13:08:18] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_130818.png (State: LOGO_SHOWN)
+[2026-07-08 13:08:18] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_130818.png
+[2026-07-08 13:08:18] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-08 13:08:18] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 193ms | Logo found with 100.00% confidence
+[2026-07-08 13:08:18] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-08 13:08:18] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-08 13:08:19] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-08 13:08:19] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_130819.png (State: DISCLAIMER)
+[2026-07-08 13:08:19] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_130819.png
+[2026-07-08 13:08:19] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-08 13:08:19] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1147ms | Logo disappeared; disclaimer screen active
+[2026-07-08 13:08:19] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-08 13:08:19] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_130819.png (State: DISCLAIMER)
+[2026-07-08 13:08:19] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_130819.png
+[2026-07-08 13:08:19] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-08 13:08:19] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 116ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-08 13:08:19] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-08 13:08:19] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-08 13:08:19] [INFO] Tapping coordinates (910, 545)...
+[2026-07-08 13:08:19] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-08 13:08:19] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-08 13:08:19] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-08 13:08:19] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 1ms | Tapped button 'OK' successfully
+[2026-07-08 13:08:19] [INFO] Step 6: Verifying screen transition...
+[2026-07-08 13:08:21] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_130821.png (State: HOME)
+[2026-07-08 13:08:21] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_130821.png
+[2026-07-08 13:08:21] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2007ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-08 13:08:21] [INFO] Automation execution completed successfully in 5.28 seconds.
+[2026-07-08 13:08:21] [INFO] ============================================================
+[2026-07-08 13:08:21] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-08 13:09:39] [INFO] ============================================================
+[2026-07-08 13:09:39] [INFO] Logo Locator Automation Tool Started
+[2026-07-08 13:09:39] [INFO] Mock Mode: True
+[2026-07-08 13:09:39] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-08 13:09:52] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:09:53] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:09:53] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-08 13:09:53] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-08 13:09:53] [INFO] Waiting for boot completion...
+[2026-07-08 13:09:54] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-08 13:09:54] [INFO] Boot completed!
+[2026-07-08 13:09:54] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1502ms | System booted successfully
+[2026-07-08 13:09:54] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-08 13:09:54] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_130954.png (State: LOGO_SHOWN)
+[2026-07-08 13:09:54] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_130954.png
+[2026-07-08 13:09:55] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-08 13:09:55] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 678ms | Logo found with 100.00% confidence
+[2026-07-08 13:09:55] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-08 13:09:55] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-08 13:09:56] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-08 13:09:56] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_130956.png (State: DISCLAIMER)
+[2026-07-08 13:09:56] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_130956.png
+[2026-07-08 13:09:56] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-08 13:09:56] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1532ms | Logo disappeared; disclaimer screen active
+[2026-07-08 13:09:56] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-08 13:09:56] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_130956.png (State: DISCLAIMER)
+[2026-07-08 13:09:56] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_130956.png
+[2026-07-08 13:09:57] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-08 13:09:57] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 519ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-08 13:09:57] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-08 13:09:57] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-08 13:09:57] [INFO] Tapping coordinates (910, 545)...
+[2026-07-08 13:09:57] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-08 13:09:57] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-08 13:09:57] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-08 13:09:57] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 1ms | Tapped button 'OK' successfully
+[2026-07-08 13:09:57] [INFO] Step 6: Verifying screen transition...
+[2026-07-08 13:09:59] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_130959.png (State: HOME)
+[2026-07-08 13:09:59] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_130959.png
+[2026-07-08 13:09:59] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2008ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-08 13:09:59] [INFO] Automation execution completed successfully in 20.31 seconds.
+[2026-07-08 13:09:59] [INFO] ============================================================
+[2026-07-08 13:09:59] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-08 13:10:24] [INFO] ============================================================
+[2026-07-08 13:10:24] [INFO] Logo Locator Automation Tool Started
+[2026-07-08 13:10:24] [INFO] Mock Mode: True
+[2026-07-08 13:10:24] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-08 13:10:38] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:10:38] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:10:38] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-08 13:10:39] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-08 13:10:39] [INFO] Waiting for boot completion...
+[2026-07-08 13:10:40] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-08 13:10:40] [INFO] Boot completed!
+[2026-07-08 13:10:40] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1537ms | System booted successfully
+[2026-07-08 13:10:40] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-08 13:10:40] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_131040.png (State: LOGO_SHOWN)
+[2026-07-08 13:10:40] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_131040.png
+[2026-07-08 13:10:41] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-08 13:10:41] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1125ms | Logo found with 100.00% confidence
+[2026-07-08 13:10:41] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-08 13:10:41] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-08 13:10:42] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-08 13:10:42] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131042.png (State: DISCLAIMER)
+[2026-07-08 13:10:42] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131042.png
+[2026-07-08 13:10:43] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:44] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131044.png (State: DISCLAIMER)
+[2026-07-08 13:10:44] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131044.png
+[2026-07-08 13:10:44] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:45] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131045.png (State: DISCLAIMER)
+[2026-07-08 13:10:45] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131045.png
+[2026-07-08 13:10:46] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:47] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131047.png (State: DISCLAIMER)
+[2026-07-08 13:10:47] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131047.png
+[2026-07-08 13:10:47] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:48] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131048.png (State: DISCLAIMER)
+[2026-07-08 13:10:48] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131048.png
+[2026-07-08 13:10:49] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:50] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131050.png (State: DISCLAIMER)
+[2026-07-08 13:10:50] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131050.png
+[2026-07-08 13:10:50] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:51] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131051.png (State: DISCLAIMER)
+[2026-07-08 13:10:51] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131051.png
+[2026-07-08 13:10:52] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:53] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131053.png (State: DISCLAIMER)
+[2026-07-08 13:10:53] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131053.png
+[2026-07-08 13:10:54] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:55] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131055.png (State: DISCLAIMER)
+[2026-07-08 13:10:55] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131055.png
+[2026-07-08 13:10:55] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:56] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131056.png (State: DISCLAIMER)
+[2026-07-08 13:10:56] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131056.png
+[2026-07-08 13:10:57] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:58] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131058.png (State: DISCLAIMER)
+[2026-07-08 13:10:58] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131058.png
+[2026-07-08 13:10:58] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:10:59] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131059.png (State: DISCLAIMER)
+[2026-07-08 13:10:59] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131059.png
+[2026-07-08 13:11:00] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:11:01] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131101.png (State: DISCLAIMER)
+[2026-07-08 13:11:01] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131101.png
+[2026-07-08 13:11:01] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:11:02] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131102.png (State: DISCLAIMER)
+[2026-07-08 13:11:02] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131102.png
+[2026-07-08 13:11:03] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:11:04] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131104.png (State: DISCLAIMER)
+[2026-07-08 13:11:04] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131104.png
+[2026-07-08 13:11:04] [INFO] Logo detected via template matching at (809, 415) with confidence 0.40
+[2026-07-08 13:11:05] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131105.png (State: DISCLAIMER)
+[2026-07-08 13:11:05] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131105.png
+[2026-07-08 13:12:36] [INFO] ============================================================
+[2026-07-08 13:12:36] [INFO] Logo Locator Automation Tool Started
+[2026-07-08 13:12:36] [INFO] Mock Mode: True
+[2026-07-08 13:12:36] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-08 13:12:45] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:12:45] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:12:45] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-08 13:12:46] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-08 13:12:46] [INFO] Waiting for boot completion...
+[2026-07-08 13:12:47] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-08 13:12:47] [INFO] Boot completed!
+[2026-07-08 13:12:47] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1502ms | System booted successfully
+[2026-07-08 13:12:47] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-08 13:12:47] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_131247.png (State: LOGO_SHOWN)
+[2026-07-08 13:12:47] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_131247.png
+[2026-07-08 13:12:47] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-08 13:12:47] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 841ms | Logo found with 100.00% confidence
+[2026-07-08 13:12:47] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-08 13:12:47] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-08 13:12:48] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-08 13:12:48] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131248.png (State: DISCLAIMER)
+[2026-07-08 13:12:48] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131248.png
+[2026-07-08 13:12:49] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-08 13:12:49] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1397ms | Logo disappeared; disclaimer screen active
+[2026-07-08 13:12:49] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-08 13:12:49] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_131249.png (State: DISCLAIMER)
+[2026-07-08 13:12:49] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_131249.png
+[2026-07-08 13:12:49] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-08 13:12:49] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 447ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-08 13:12:49] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-08 13:12:49] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-08 13:12:49] [INFO] Tapping coordinates (910, 545)...
+[2026-07-08 13:12:49] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-08 13:12:49] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-08 13:12:49] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-08 13:12:49] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 2ms | Tapped button 'OK' successfully
+[2026-07-08 13:12:49] [INFO] Step 6: Verifying screen transition...
+[2026-07-08 13:12:51] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_131251.png (State: HOME)
+[2026-07-08 13:12:51] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_131251.png
+[2026-07-08 13:12:52] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2004ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-08 13:12:52] [INFO] Automation execution completed successfully in 16.13 seconds.
+[2026-07-08 13:12:52] [INFO] ============================================================
+[2026-07-08 13:12:52] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-08 13:14:14] [INFO] ============================================================
+[2026-07-08 13:14:14] [INFO] Logo Locator Automation Tool Started
+[2026-07-08 13:14:14] [INFO] Mock Mode: True
+[2026-07-08 13:14:14] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-08 13:14:26] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:14:27] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-08 13:14:27] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-08 13:14:27] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-08 13:14:27] [INFO] Waiting for boot completion...
+[2026-07-08 13:14:28] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-08 13:14:28] [INFO] Boot completed!
+[2026-07-08 13:14:28] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1504ms | System booted successfully
+[2026-07-08 13:14:28] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-08 13:14:28] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_131428.png (State: LOGO_SHOWN)
+[2026-07-08 13:14:28] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260708_131428.png
+[2026-07-08 13:14:29] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-08 13:14:29] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 781ms | Logo found with 100.00% confidence
+[2026-07-08 13:14:29] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-08 13:14:29] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-08 13:14:30] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-08 13:14:30] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131430.png (State: DISCLAIMER)
+[2026-07-08 13:14:30] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260708_131430.png
+[2026-07-08 13:14:31] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-08 13:14:31] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1509ms | Logo disappeared; disclaimer screen active
+[2026-07-08 13:14:31] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-08 13:14:31] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_131431.png (State: DISCLAIMER)
+[2026-07-08 13:14:31] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260708_131431.png
+[2026-07-08 13:14:31] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-08 13:14:31] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 483ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-08 13:14:31] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-08 13:14:31] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-08 13:14:31] [INFO] Tapping coordinates (910, 545)...
+[2026-07-08 13:14:31] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-08 13:14:31] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-08 13:14:31] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-08 13:14:31] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 1ms | Tapped button 'OK' successfully
+[2026-07-08 13:14:31] [INFO] Step 6: Verifying screen transition...
+[2026-07-08 13:14:33] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_131433.png (State: HOME)
+[2026-07-08 13:14:33] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260708_131433.png
+[2026-07-08 13:14:34] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2009ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-08 13:14:34] [INFO] Automation execution completed successfully in 19.85 seconds.
+[2026-07-08 13:14:34] [INFO] ============================================================
+[2026-07-08 13:14:34] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:13:41] [INFO] ============================================================
+[2026-07-09 16:13:41] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:13:41] [INFO] Mock Mode: True
+[2026-07-09 16:13:41] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:13:58] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:13:58] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:13:58] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:13:59] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:13:59] [INFO] Waiting for boot completion...
+[2026-07-09 16:14:00] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:14:00] [INFO] Boot completed!
+[2026-07-09 16:14:00] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1519ms | System booted successfully
+[2026-07-09 16:14:00] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:14:00] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_161400.png (State: LOGO_SHOWN)
+[2026-07-09 16:14:00] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_161400.png
+[2026-07-09 16:14:01] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:14:01] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 751ms | Logo found with 100.00% confidence
+[2026-07-09 16:14:01] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:14:01] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:14:02] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:14:02] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_161402.png (State: DISCLAIMER)
+[2026-07-09 16:14:02] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_161402.png
+[2026-07-09 16:14:02] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:14:02] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1452ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:14:02] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:14:02] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260709_161402.png (State: DISCLAIMER)
+[2026-07-09 16:14:02] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260709_161402.png
+[2026-07-09 16:14:03] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:14:03] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 472ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:14:03] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:14:03] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:14:03] [INFO] Tapping coordinates (910, 545)...
+[2026-07-09 16:14:03] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:14:03] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:14:03] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-09 16:14:03] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 2ms | Tapped button 'OK' successfully
+[2026-07-09 16:14:03] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:14:05] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_161405.png (State: HOME)
+[2026-07-09 16:14:05] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_161405.png
+[2026-07-09 16:14:05] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2010ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:14:05] [INFO] Automation execution completed successfully in 24.65 seconds.
+[2026-07-09 16:14:05] [INFO] ============================================================
+[2026-07-09 16:14:05] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:30:36] [INFO] ============================================================
+[2026-07-09 16:30:36] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:30:36] [INFO] Mock Mode: True
+[2026-07-09 16:30:36] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:30:50] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:30:50] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:30:50] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:30:51] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:30:51] [INFO] Waiting for boot completion...
+[2026-07-09 16:30:52] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:30:52] [INFO] Boot completed!
+[2026-07-09 16:30:52] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1504ms | System booted successfully
+[2026-07-09 16:30:52] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:30:52] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_163052.png (State: LOGO_SHOWN)
+[2026-07-09 16:30:52] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_163052.png
+[2026-07-09 16:30:54] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:30:54] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1872ms | Logo found with 100.00% confidence
+[2026-07-09 16:30:54] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:30:54] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:30:55] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:30:55] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_163055.png (State: DISCLAIMER)
+[2026-07-09 16:30:55] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_163055.png
+[2026-07-09 16:30:56] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:30:56] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1768ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:30:56] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:30:56] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260709_163056.png (State: DISCLAIMER)
+[2026-07-09 16:30:56] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260709_163056.png
+[2026-07-09 16:30:57] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:30:57] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 1427ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:30:57] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:30:57] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:30:57] [INFO] Tapping coordinates (910, 545)...
+[2026-07-09 16:30:58] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:30:58] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:30:58] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-09 16:30:58] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 19ms | Tapped button 'OK' successfully
+[2026-07-09 16:30:58] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:31:00] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_163100.png (State: HOME)
+[2026-07-09 16:31:00] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_163100.png
+[2026-07-09 16:31:00] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2054ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:31:00] [INFO] Automation execution completed successfully in 23.93 seconds.
+[2026-07-09 16:31:00] [INFO] ============================================================
+[2026-07-09 16:31:00] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:32:58] [INFO] ============================================================
+[2026-07-09 16:32:58] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:32:58] [INFO] Mock Mode: True
+[2026-07-09 16:32:58] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:40:47] [INFO] ============================================================
+[2026-07-09 16:40:47] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:40:47] [INFO] Mock Mode: True
+[2026-07-09 16:40:47] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:41:13] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:41:14] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:41:14] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:41:14] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:41:14] [INFO] Waiting for boot completion...
+[2026-07-09 16:41:15] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:41:15] [INFO] Boot completed!
+[2026-07-09 16:41:15] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1511ms | System booted successfully
+[2026-07-09 16:41:15] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:41:15] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164115.png (State: LOGO_SHOWN)
+[2026-07-09 16:41:15] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164115.png
+[2026-07-09 16:41:17] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:41:17] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1890ms | Logo found with 100.00% confidence
+[2026-07-09 16:41:17] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:41:17] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:41:18] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:41:18] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164118.png (State: DISCLAIMER)
+[2026-07-09 16:41:18] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164118.png
+[2026-07-09 16:41:19] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:41:19] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1605ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:41:19] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:41:19] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260709_164119.png (State: DISCLAIMER)
+[2026-07-09 16:41:19] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_20260709_164119.png
+[2026-07-09 16:41:20] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:41:20] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 1289ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:41:20] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:41:20] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:41:20] [INFO] Tapping coordinates (910, 545)...
+[2026-07-09 16:41:20] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:41:20] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:41:20] [DEBUG] Tap command executed at (910, 545) successfully.
+[2026-07-09 16:41:20] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 8ms | Tapped button 'OK' successfully
+[2026-07-09 16:41:20] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:41:22] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164122.png (State: HOME)
+[2026-07-09 16:41:22] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164122.png
+[2026-07-09 16:41:24] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2063ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:41:24] [INFO] Automation execution completed successfully in 36.77 seconds.
+[2026-07-09 16:41:24] [INFO] ============================================================
+[2026-07-09 16:41:24] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:43:07] [INFO] ============================================================
+[2026-07-09 16:43:08] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:43:08] [INFO] Mock Mode: True
+[2026-07-09 16:43:08] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:44:01] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:44:01] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:44:01] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:44:01] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:44:01] [INFO] Waiting for boot completion...
+[2026-07-09 16:44:02] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:44:02] [INFO] Boot completed!
+[2026-07-09 16:44:02] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1502ms | System booted successfully
+[2026-07-09 16:44:02] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:44:02] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164402.png (State: LOGO_SHOWN)
+[2026-07-09 16:44:02] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164402.png
+[2026-07-09 16:44:04] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:44:04] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1572ms | Logo found with 100.00% confidence
+[2026-07-09 16:44:04] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:44:04] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:44:05] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:44:05] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164405.png (State: DISCLAIMER)
+[2026-07-09 16:44:05] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164405.png
+[2026-07-09 16:44:05] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:44:05] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1412ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:44:05] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:44:05] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164405.png (State: DISCLAIMER)
+[2026-07-09 16:44:05] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164405.png
+[2026-07-09 16:44:06] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:44:06] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-09 16:44:06] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 481ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:44:06] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:44:06] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:44:06] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-09 16:44:06] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-09 16:44:06] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:44:06] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:44:06] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-09 16:44:06] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 237ms | Tapped button 'OK' successfully
+[2026-07-09 16:44:06] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:44:08] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164408.png (State: HOME)
+[2026-07-09 16:44:08] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164408.png
+[2026-07-09 16:44:09] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2005ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:44:09] [INFO] Automation execution completed successfully in 61.37 seconds.
+[2026-07-09 16:44:09] [INFO] ============================================================
+[2026-07-09 16:44:09] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:44:58] [INFO] ============================================================
+[2026-07-09 16:44:58] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:44:58] [INFO] Mock Mode: True
+[2026-07-09 16:44:58] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:45:08] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:45:08] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:45:08] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:45:09] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:45:09] [INFO] Waiting for boot completion...
+[2026-07-09 16:45:10] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:45:10] [INFO] Boot completed!
+[2026-07-09 16:45:10] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1829ms | System booted successfully
+[2026-07-09 16:45:10] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:45:10] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164510.png (State: LOGO_SHOWN)
+[2026-07-09 16:45:10] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164510.png
+[2026-07-09 16:45:13] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:45:13] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 2495ms | Logo found with 100.00% confidence
+[2026-07-09 16:45:13] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:45:13] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:45:14] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:45:14] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164514.png (State: DISCLAIMER)
+[2026-07-09 16:45:14] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164514.png
+[2026-07-09 16:45:14] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:45:14] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1356ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:45:14] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:45:14] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164514.png (State: DISCLAIMER)
+[2026-07-09 16:45:14] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164514.png
+[2026-07-09 16:45:15] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:45:15] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-09 16:45:15] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 407ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:45:15] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:45:15] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:45:15] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-09 16:45:15] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-09 16:45:15] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:45:15] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:45:15] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-09 16:45:15] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 3ms | Tapped button 'OK' successfully
+[2026-07-09 16:45:15] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:45:17] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164517.png (State: HOME)
+[2026-07-09 16:45:17] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164517.png
+[2026-07-09 16:45:17] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2012ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:45:17] [INFO] Automation execution completed successfully in 19.42 seconds.
+[2026-07-09 16:45:17] [INFO] ============================================================
+[2026-07-09 16:45:17] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:47:27] [INFO] ============================================================
+[2026-07-09 16:47:27] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:47:27] [INFO] Mock Mode: True
+[2026-07-09 16:47:27] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:47:37] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:47:37] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:47:37] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:47:38] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:47:38] [INFO] Waiting for boot completion...
+[2026-07-09 16:47:39] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:47:39] [INFO] Boot completed!
+[2026-07-09 16:47:39] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1609ms | System booted successfully
+[2026-07-09 16:47:39] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:47:39] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164739.png (State: LOGO_SHOWN)
+[2026-07-09 16:47:39] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164739.png
+[2026-07-09 16:47:39] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:47:39] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 604ms | Logo found with 100.00% confidence
+[2026-07-09 16:47:39] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:47:39] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:47:40] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:47:40] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164740.png (State: DISCLAIMER)
+[2026-07-09 16:47:40] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164740.png
+[2026-07-09 16:47:41] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:47:41] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1428ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:47:41] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:47:41] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164741.png (State: DISCLAIMER)
+[2026-07-09 16:47:41] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164741.png
+[2026-07-09 16:47:41] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:47:41] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-09 16:47:41] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 620ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:47:42] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:47:42] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:47:42] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-09 16:47:42] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-09 16:47:42] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:47:42] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:47:42] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-09 16:47:42] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 380ms | Tapped button 'OK' successfully
+[2026-07-09 16:47:42] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:47:44] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164744.png (State: HOME)
+[2026-07-09 16:47:44] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164744.png
+[2026-07-09 16:47:44] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2095ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:47:44] [INFO] Automation execution completed successfully in 19.56 seconds.
+[2026-07-09 16:47:44] [INFO] ============================================================
+[2026-07-09 16:47:44] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:48:13] [INFO] ============================================================
+[2026-07-09 16:48:13] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:48:13] [INFO] Mock Mode: True
+[2026-07-09 16:48:13] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:49:12] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:49:14] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:49:14] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:49:14] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:49:14] [INFO] Waiting for boot completion...
+[2026-07-09 16:49:15] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:49:15] [INFO] Boot completed!
+[2026-07-09 16:49:15] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1554ms | System booted successfully
+[2026-07-09 16:49:15] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:49:15] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164915.png (State: LOGO_SHOWN)
+[2026-07-09 16:49:15] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_164915.png
+[2026-07-09 16:49:19] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:49:19] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 3162ms | Logo found with 100.00% confidence
+[2026-07-09 16:49:19] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:49:19] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:49:20] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:49:20] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164920.png (State: DISCLAIMER)
+[2026-07-09 16:49:20] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_164920.png
+[2026-07-09 16:49:20] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:49:20] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1646ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:49:20] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:49:20] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164920.png (State: DISCLAIMER)
+[2026-07-09 16:49:20] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_164920.png
+[2026-07-09 16:49:22] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:49:22] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-09 16:49:22] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 1287ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:49:22] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:49:22] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:49:22] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-09 16:49:22] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-09 16:49:22] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:49:22] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:49:22] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-09 16:49:22] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 7ms | Tapped button 'OK' successfully
+[2026-07-09 16:49:22] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:49:24] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164924.png (State: HOME)
+[2026-07-09 16:49:24] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_164924.png
+[2026-07-09 16:49:24] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2041ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:49:25] [INFO] Automation execution completed successfully in 72.06 seconds.
+[2026-07-09 16:49:25] [INFO] ============================================================
+[2026-07-09 16:49:25] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:50:53] [INFO] ============================================================
+[2026-07-09 16:50:53] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:50:53] [INFO] Mock Mode: True
+[2026-07-09 16:50:53] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:51:05] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:51:05] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:51:05] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:51:06] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:51:06] [INFO] Waiting for boot completion...
+[2026-07-09 16:51:07] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:51:07] [INFO] Boot completed!
+[2026-07-09 16:51:07] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1535ms | System booted successfully
+[2026-07-09 16:51:07] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:51:07] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_165107.png (State: LOGO_SHOWN)
+[2026-07-09 16:51:07] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_165107.png
+[2026-07-09 16:51:09] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:51:09] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1900ms | Logo found with 100.00% confidence
+[2026-07-09 16:51:09] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:51:09] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:51:10] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:51:10] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_165110.png (State: DISCLAIMER)
+[2026-07-09 16:51:10] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_165110.png
+[2026-07-09 16:51:11] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:51:11] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 2360ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:51:11] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:51:11] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_165111.png (State: DISCLAIMER)
+[2026-07-09 16:51:11] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_165111.png
+[2026-07-09 16:51:11] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:51:11] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-09 16:51:11] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 384ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:51:12] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:51:12] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:51:12] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-09 16:51:12] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-09 16:51:12] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:51:12] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:51:12] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-09 16:51:12] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 3ms | Tapped button 'OK' successfully
+[2026-07-09 16:51:12] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:51:14] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_165114.png (State: HOME)
+[2026-07-09 16:51:14] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_165114.png
+[2026-07-09 16:51:14] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2007ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:51:14] [INFO] Automation execution completed successfully in 20.61 seconds.
+[2026-07-09 16:51:14] [INFO] ============================================================
+[2026-07-09 16:51:14] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:52:31] [INFO] ============================================================
+[2026-07-09 16:52:31] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:52:31] [INFO] Mock Mode: True
+[2026-07-09 16:52:31] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:52:41] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:52:41] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:52:41] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:52:42] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:52:42] [INFO] Waiting for boot completion...
+[2026-07-09 16:52:43] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:52:43] [INFO] Boot completed!
+[2026-07-09 16:52:43] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1504ms | System booted successfully
+[2026-07-09 16:52:43] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:52:43] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_165243.png (State: LOGO_SHOWN)
+[2026-07-09 16:52:43] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_165243.png
+[2026-07-09 16:52:44] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:52:44] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 801ms | Logo found with 100.00% confidence
+[2026-07-09 16:52:44] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:52:44] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:52:45] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:52:45] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_165245.png (State: DISCLAIMER)
+[2026-07-09 16:52:45] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_165245.png
+[2026-07-09 16:52:45] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:52:45] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1381ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:52:45] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:52:45] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_165245.png (State: DISCLAIMER)
+[2026-07-09 16:52:45] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_165245.png
+[2026-07-09 16:52:46] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:52:46] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-09 16:52:46] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 366ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:52:46] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:52:46] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:52:46] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-09 16:52:46] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-09 16:52:46] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:52:46] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:52:46] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-09 16:52:46] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 2ms | Tapped button 'OK' successfully
+[2026-07-09 16:52:46] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:52:48] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_165248.png (State: HOME)
+[2026-07-09 16:52:48] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_165248.png
+[2026-07-09 16:52:48] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2016ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:52:48] [INFO] Automation execution completed successfully in 16.85 seconds.
+[2026-07-09 16:52:48] [INFO] ============================================================
+[2026-07-09 16:52:48] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-09 16:54:41] [INFO] ============================================================
+[2026-07-09 16:54:41] [INFO] Logo Locator Automation Tool Started
+[2026-07-09 16:54:41] [INFO] Mock Mode: True
+[2026-07-09 16:54:41] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-09 16:54:51] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:54:52] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-09 16:54:52] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-09 16:54:52] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-09 16:54:52] [INFO] Waiting for boot completion...
+[2026-07-09 16:54:53] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-09 16:54:53] [INFO] Boot completed!
+[2026-07-09 16:54:53] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1506ms | System booted successfully
+[2026-07-09 16:54:53] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-09 16:54:53] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_165453.png (State: LOGO_SHOWN)
+[2026-07-09 16:54:53] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260709_165453.png
+[2026-07-09 16:54:55] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-09 16:54:55] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 2141ms | Logo found with 100.00% confidence
+[2026-07-09 16:54:55] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-09 16:54:55] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-09 16:54:56] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-09 16:54:56] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_165456.png (State: DISCLAIMER)
+[2026-07-09 16:54:56] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260709_165456.png
+[2026-07-09 16:54:57] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-09 16:54:57] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1477ms | Logo disappeared; disclaimer screen active
+[2026-07-09 16:54:57] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-09 16:54:57] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_165457.png (State: DISCLAIMER)
+[2026-07-09 16:54:57] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260709_165457.png
+[2026-07-09 16:54:58] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-09 16:54:58] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-09 16:54:58] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 565ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-09 16:54:58] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-09 16:54:58] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-09 16:54:58] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-09 16:54:58] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-09 16:54:58] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-09 16:54:58] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-09 16:54:58] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-09 16:54:58] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 14ms | Tapped button 'OK' successfully
+[2026-07-09 16:54:58] [INFO] Step 6: Verifying screen transition...
+[2026-07-09 16:55:00] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_165500.png (State: HOME)
+[2026-07-09 16:55:00] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260709_165500.png
+[2026-07-09 16:55:01] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2279ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-09 16:55:01] [INFO] Automation execution completed successfully in 19.53 seconds.
+[2026-07-09 16:55:01] [INFO] ============================================================
+[2026-07-09 16:55:01] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-15 12:17:52] [INFO] ============================================================
+[2026-07-15 12:17:52] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 12:17:52] [INFO] Mock Mode: True
+[2026-07-15 12:17:52] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 12:31:22] [INFO] ============================================================
+[2026-07-15 12:31:22] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 12:31:22] [INFO] Mock Mode: True
+[2026-07-15 12:31:22] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 12:31:35] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:31:35] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:31:35] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 12:31:35] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 12:31:35] [INFO] Waiting for boot completion...
+[2026-07-15 12:31:36] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 12:31:36] [INFO] Boot completed!
+[2026-07-15 12:31:36] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1502ms | System booted successfully
+[2026-07-15 12:31:36] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 12:31:36] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_123136.png (State: LOGO_SHOWN)
+[2026-07-15 12:31:36] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_123136.png
+[2026-07-15 12:31:37] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 12:31:37] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 754ms | Logo found with 100.00% confidence
+[2026-07-15 12:31:37] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 12:31:37] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 12:31:38] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 12:31:38] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_123138.png (State: DISCLAIMER)
+[2026-07-15 12:31:38] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_123138.png
+[2026-07-15 12:31:38] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 12:31:38] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1277ms | Logo disappeared; disclaimer screen active
+[2026-07-15 12:31:38] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 12:31:38] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_123138.png (State: DISCLAIMER)
+[2026-07-15 12:31:38] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_123138.png
+[2026-07-15 12:31:39] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 12:31:39] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 12:31:39] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 306ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 12:31:39] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 12:31:39] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 12:31:39] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 12:31:39] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 12:31:39] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 12:31:39] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 12:31:39] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 12:31:39] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 3ms | Tapped button 'OK' successfully
+[2026-07-15 12:31:39] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 12:31:41] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_123141.png (State: HOME)
+[2026-07-15 12:31:41] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_123141.png
+[2026-07-15 12:31:41] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2005ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 12:31:41] [INFO] Automation execution completed successfully in 19.21 seconds.
+[2026-07-15 12:31:41] [INFO] ============================================================
+[2026-07-15 12:31:41] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-15 12:41:18] [INFO] ============================================================
+[2026-07-15 12:41:18] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 12:41:18] [INFO] Mock Mode: True
+[2026-07-15 12:41:18] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 12:41:27] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:41:27] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:41:27] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 12:41:27] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 12:41:27] [INFO] Waiting for boot completion...
+[2026-07-15 12:41:28] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 12:41:28] [INFO] Boot completed!
+[2026-07-15 12:41:28] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1503ms | System booted successfully
+[2026-07-15 12:41:28] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 12:41:29] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_124128.png (State: LOGO_SHOWN)
+[2026-07-15 12:41:29] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_124128.png
+[2026-07-15 12:41:29] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 12:41:29] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 756ms | Logo found with 100.00% confidence
+[2026-07-15 12:41:29] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 12:41:29] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 12:41:30] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 12:41:30] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_124130.png (State: DISCLAIMER)
+[2026-07-15 12:41:30] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_124130.png
+[2026-07-15 12:41:31] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 12:41:31] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1476ms | Logo disappeared; disclaimer screen active
+[2026-07-15 12:41:31] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 12:41:31] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_124131.png (State: DISCLAIMER)
+[2026-07-15 12:41:31] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_124131.png
+[2026-07-15 12:41:31] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 12:41:31] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 12:41:31] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 287ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 12:41:31] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 12:41:31] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 12:41:31] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 12:41:31] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 12:41:31] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 12:41:31] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 12:41:31] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 12:41:31] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 0ms | Tapped button 'OK' successfully
+[2026-07-15 12:41:31] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 12:41:33] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_124133.png (State: HOME)
+[2026-07-15 12:41:33] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_124133.png
+[2026-07-15 12:41:33] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2009ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 12:41:33] [INFO] Automation execution completed successfully in 15.30 seconds.
+[2026-07-15 12:41:33] [INFO] ============================================================
+[2026-07-15 12:41:33] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-15 12:43:38] [INFO] ============================================================
+[2026-07-15 12:43:38] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 12:43:38] [INFO] Mock Mode: True
+[2026-07-15 12:43:38] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 12:43:51] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:43:52] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:43:52] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 12:43:52] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 12:43:52] [INFO] Waiting for boot completion...
+[2026-07-15 12:43:53] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 12:43:53] [INFO] Boot completed!
+[2026-07-15 12:43:53] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1517ms | System booted successfully
+[2026-07-15 12:43:53] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 12:43:53] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_124353.png (State: LOGO_SHOWN)
+[2026-07-15 12:43:53] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_124353.png
+[2026-07-15 12:43:54] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 12:43:54] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1019ms | Logo found with 100.00% confidence
+[2026-07-15 12:43:54] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 12:43:54] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 12:43:55] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 12:43:55] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_124355.png (State: DISCLAIMER)
+[2026-07-15 12:43:55] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_124355.png
+[2026-07-15 12:43:56] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 12:43:56] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1490ms | Logo disappeared; disclaimer screen active
+[2026-07-15 12:43:56] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 12:43:56] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_124356.png (State: DISCLAIMER)
+[2026-07-15 12:43:56] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_124356.png
+[2026-07-15 12:43:56] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 12:43:56] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 12:43:56] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 412ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 12:43:56] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 12:43:56] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 12:43:56] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 12:43:56] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 12:43:56] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 12:43:56] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 12:43:56] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 12:43:56] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 1ms | Tapped button 'OK' successfully
+[2026-07-15 12:43:56] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 12:43:58] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_124358.png (State: HOME)
+[2026-07-15 12:43:58] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_124358.png
+[2026-07-15 12:43:59] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2005ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 12:43:59] [INFO] Automation execution completed successfully in 20.89 seconds.
+[2026-07-15 12:43:59] [INFO] ============================================================
+[2026-07-15 12:43:59] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-15 12:46:10] [INFO] ============================================================
+[2026-07-15 12:46:10] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 12:46:10] [INFO] Mock Mode: True
+[2026-07-15 12:46:10] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 12:46:17] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:46:17] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 12:46:17] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 12:46:18] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 12:46:18] [INFO] Waiting for boot completion...
+[2026-07-15 12:46:19] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 12:46:19] [INFO] Boot completed!
+[2026-07-15 12:46:19] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1502ms | System booted successfully
+[2026-07-15 12:46:19] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 12:46:19] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_124619.png (State: LOGO_SHOWN)
+[2026-07-15 12:46:19] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_124619.png
+[2026-07-15 12:46:19] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 12:46:19] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 382ms | Logo found with 100.00% confidence
+[2026-07-15 12:46:19] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 12:46:19] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 12:46:20] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 12:46:20] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_124620.png (State: DISCLAIMER)
+[2026-07-15 12:46:20] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_124620.png
+[2026-07-15 12:46:21] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 12:46:21] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1233ms | Logo disappeared; disclaimer screen active
+[2026-07-15 12:46:21] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 12:46:21] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_124621.png (State: DISCLAIMER)
+[2026-07-15 12:46:21] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_124621.png
+[2026-07-15 12:46:21] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 12:46:21] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 12:46:21] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 405ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 12:46:21] [DEBUG] Saved annotated image to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 12:46:21] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 12:46:21] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 12:46:21] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 12:46:21] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 12:46:21] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 12:46:21] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 12:46:21] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 3ms | Tapped button 'OK' successfully
+[2026-07-15 12:46:21] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 12:46:23] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_124623.png (State: HOME)
+[2026-07-15 12:46:23] [DEBUG] Captured screen and saved to: c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_124623.png
+[2026-07-15 12:46:23] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2005ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 12:46:23] [INFO] Automation execution completed successfully in 13.70 seconds.
+[2026-07-15 12:46:23] [INFO] ============================================================
+[2026-07-15 12:46:23] [INFO] HTML Report generated at c:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-15 15:08:24] [INFO] ============================================================
+[2026-07-15 15:08:24] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 15:08:24] [INFO] Mock Mode: True
+[2026-07-15 15:08:24] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 15:08:41] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:08:41] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:08:41] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 15:08:41] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 15:08:41] [INFO] Waiting for boot completion...
+[2026-07-15 15:08:42] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 15:08:42] [INFO] Boot completed!
+[2026-07-15 15:08:42] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1504ms | System booted successfully
+[2026-07-15 15:08:43] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 15:08:43] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_150843.png (State: LOGO_SHOWN)
+[2026-07-15 15:08:43] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_150843.png
+[2026-07-15 15:08:43] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 15:08:43] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 841ms | Logo found with 100.00% confidence
+[2026-07-15 15:08:43] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 15:08:43] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 15:08:44] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 15:08:44] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_150844.png (State: DISCLAIMER)
+[2026-07-15 15:08:44] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_150844.png
+[2026-07-15 15:08:45] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 15:08:45] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1256ms | Logo disappeared; disclaimer screen active
+[2026-07-15 15:08:45] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 15:08:45] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_150845.png (State: DISCLAIMER)
+[2026-07-15 15:08:45] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_150845.png
+[2026-07-15 15:08:45] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 15:08:45] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 15:08:45] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 316ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 15:08:45] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 15:08:45] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 15:08:45] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 15:08:45] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 15:08:45] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 15:08:45] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 15:08:45] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 15:08:45] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 1ms | Tapped button 'OK' successfully
+[2026-07-15 15:08:45] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 15:08:47] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_150847.png (State: HOME)
+[2026-07-15 15:08:47] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_150847.png
+[2026-07-15 15:08:48] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2101ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 15:08:48] [INFO] Automation execution completed successfully in 24.32 seconds.
+[2026-07-15 15:08:48] [INFO] ============================================================
+[2026-07-15 15:08:48] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-15 15:09:34] [INFO] ============================================================
+[2026-07-15 15:09:34] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 15:09:34] [INFO] Mock Mode: True
+[2026-07-15 15:09:34] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 15:09:54] [INFO] Loaded YOLOv8 model for logo detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:09:54] [INFO] Loaded YOLOv8 model for button detection: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:09:54] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 15:09:55] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 15:09:55] [INFO] Waiting for boot completion...
+[2026-07-15 15:09:56] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 15:09:56] [INFO] Boot completed!
+[2026-07-15 15:09:56] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1508ms | System booted successfully
+[2026-07-15 15:09:56] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 15:09:56] [DEBUG] Mock Capture: Copied mock_boot_2.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_150956.png (State: LOGO_SHOWN)
+[2026-07-15 15:09:56] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\boot_screen_20260715_150956.png
+[2026-07-15 15:09:57] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 15:09:57] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1130ms | Logo found with 100.00% confidence
+[2026-07-15 15:09:57] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 15:09:57] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 15:09:58] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 15:09:58] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_150958.png (State: DISCLAIMER)
+[2026-07-15 15:09:58] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\logo_check_20260715_150958.png
+[2026-07-15 15:09:59] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 15:09:59] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1550ms | Logo disappeared; disclaimer screen active
+[2026-07-15 15:09:59] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 15:09:59] [DEBUG] Mock Capture: Copied mock_disclaimer.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_150959.png (State: DISCLAIMER)
+[2026-07-15 15:09:59] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_150959.png
+[2026-07-15 15:09:59] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 15:09:59] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 15:09:59] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 724ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 15:09:59] [DEBUG] Saved annotated image to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 15:09:59] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 15:09:59] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 15:09:59] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 15:09:59] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 15:09:59] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 15:09:59] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 15:09:59] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 1ms | Tapped button 'OK' successfully
+[2026-07-15 15:09:59] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 15:10:01] [DEBUG] Mock Capture: Copied mock_home.png to C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_151001.png (State: HOME)
+[2026-07-15 15:10:01] [DEBUG] Captured screen and saved to: C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\screenshots\post_tap_screen_20260715_151001.png
+[2026-07-15 15:10:02] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2012ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 15:10:02] [INFO] Automation execution completed successfully in 31.12 seconds.
+[2026-07-15 15:10:02] [INFO] ============================================================
+[2026-07-15 15:10:02] [INFO] HTML Report generated at C:\Users\hp\.gemini\antigravity-ide\scratch\LogoLocatorTool\reports\report.html
+[2026-07-15 15:21:39] [INFO] ============================================================
+[2026-07-15 15:21:39] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 15:21:39] [INFO] Mock Mode: True
+[2026-07-15 15:21:39] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 15:23:20] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:23:21] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:23:21] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 15:23:22] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 15:23:22] [INFO] Waiting for boot completion...
+[2026-07-15 15:23:23] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 15:23:23] [INFO] Boot completed!
+[2026-07-15 15:23:23] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1570ms | System booted successfully
+[2026-07-15 15:23:23] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 15:23:23] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\boot_screen_20260715_152323.png (State: LOGO_SHOWN)
+[2026-07-15 15:23:23] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\boot_screen_20260715_152323.png
+[2026-07-15 15:23:28] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 15:23:28] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 5128ms | Logo found with 100.00% confidence
+[2026-07-15 15:23:28] [DEBUG] Saved annotated image to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 15:23:28] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 15:23:29] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 15:23:29] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\logo_check_20260715_152329.png (State: DISCLAIMER)
+[2026-07-15 15:23:29] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\logo_check_20260715_152329.png
+[2026-07-15 15:23:33] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 15:23:33] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 4470ms | Logo disappeared; disclaimer screen active
+[2026-07-15 15:23:33] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 15:23:33] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_152333.png (State: DISCLAIMER)
+[2026-07-15 15:23:33] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_152333.png
+[2026-07-15 15:23:38] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 15:23:38] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 15:23:38] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 5368ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 15:23:38] [DEBUG] Saved annotated image to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 15:23:38] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 15:23:38] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 15:23:38] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 15:23:38] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 15:23:38] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 15:23:38] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 15:23:38] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 18ms | Tapped button 'OK' successfully
+[2026-07-15 15:23:38] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 15:23:41] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\post_tap_screen_20260715_152340.png (State: HOME)
+[2026-07-15 15:23:41] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\post_tap_screen_20260715_152340.png
+[2026-07-15 15:23:48] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2285ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 15:23:48] [INFO] Automation execution completed successfully in 136.02 seconds.
+[2026-07-15 15:23:48] [INFO] ============================================================
+[2026-07-15 15:23:48] [INFO] HTML Report generated at c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\report.html
+[2026-07-15 15:25:19] [INFO] ============================================================
+[2026-07-15 15:25:19] [INFO] Logo Locator Automation Tool Started
+[2026-07-15 15:25:19] [INFO] Mock Mode: True
+[2026-07-15 15:25:19] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-15 15:26:05] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:26:06] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-15 15:26:06] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-15 15:26:07] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-15 15:26:07] [INFO] Waiting for boot completion...
+[2026-07-15 15:26:08] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-15 15:26:08] [INFO] Boot completed!
+[2026-07-15 15:26:08] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1505ms | System booted successfully
+[2026-07-15 15:26:08] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-15 15:26:08] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\boot_screen_20260715_152608.png (State: LOGO_SHOWN)
+[2026-07-15 15:26:08] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\boot_screen_20260715_152608.png
+[2026-07-15 15:26:10] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-15 15:26:10] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 1851ms | Logo found with 100.00% confidence
+[2026-07-15 15:26:10] [DEBUG] Saved annotated image to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\logo_detected.png
+[2026-07-15 15:26:10] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-15 15:26:11] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-15 15:26:11] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\logo_check_20260715_152611.png (State: DISCLAIMER)
+[2026-07-15 15:26:11] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\logo_check_20260715_152611.png
+[2026-07-15 15:26:12] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-15 15:26:12] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 2410ms | Logo disappeared; disclaimer screen active
+[2026-07-15 15:26:12] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-15 15:26:12] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_152612.png (State: DISCLAIMER)
+[2026-07-15 15:26:12] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\disclaimer_screen_1_20260715_152612.png
+[2026-07-15 15:26:13] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-15 15:26:13] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-15 15:26:13] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 706ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-15 15:26:13] [DEBUG] Saved annotated image to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\button_detected.png
+[2026-07-15 15:26:13] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-15 15:26:13] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-15 15:26:13] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-15 15:26:13] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-15 15:26:13] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-15 15:26:13] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-15 15:26:13] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 11ms | Tapped button 'OK' successfully
+[2026-07-15 15:26:13] [INFO] Step 6: Verifying screen transition...
+[2026-07-15 15:26:15] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\post_tap_screen_20260715_152615.png (State: HOME)
+[2026-07-15 15:26:15] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\post_tap_screen_20260715_152615.png
+[2026-07-15 15:26:16] [INFO] Step: Verify Screen Transition | Status: PASS | Coord: N/A | Time: 2128ms | Disclaimer dismissed successfully. Next screen verified.
+[2026-07-15 15:26:16] [INFO] Automation execution completed successfully in 60.21 seconds.
+[2026-07-15 15:26:16] [INFO] ============================================================
+[2026-07-15 15:26:16] [INFO] HTML Report generated at c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\report.html
+[2026-07-16 11:05:07] [INFO] ============================================================
+[2026-07-16 11:05:08] [INFO] Logo Locator Automation Tool Started
+[2026-07-16 11:05:08] [INFO] Mock Mode: True
+[2026-07-16 11:05:08] [INFO] ADB Manager initialized in MOCK SIMULATION mode.
+[2026-07-16 11:06:21] [INFO] Loaded YOLOv8 model for logo detection: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-16 11:06:22] [INFO] Loaded YOLOv8 model for button detection: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\config/yolov8n_logo_button.pt
+[2026-07-16 11:06:22] [INFO] Step 1: Connecting and checking boot state...
+[2026-07-16 11:06:22] [INFO] Mock ADB: Connected to virtual device.
+[2026-07-16 11:06:22] [INFO] Waiting for boot completion...
+[2026-07-16 11:06:23] [DEBUG] Mock state transitioned to LOGO_SHOWN
+[2026-07-16 11:06:23] [INFO] Boot completed!
+[2026-07-16 11:06:23] [INFO] Step: Wait Boot Completed | Status: PASS | Coord: N/A | Time: 1610ms | System booted successfully
+[2026-07-16 11:06:23] [INFO] Step 2: Detecting OEM boot logo...
+[2026-07-16 11:06:23] [DEBUG] Mock Capture: Copied mock_boot_2.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\boot_screen_20260716_110623.png (State: LOGO_SHOWN)
+[2026-07-16 11:06:23] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\boot_screen_20260716_110623.png
+[2026-07-16 11:06:26] [INFO] Logo detected via template matching at (540, 260) with confidence 1.00
+[2026-07-16 11:06:26] [INFO] Step: Detect Boot Logo | Status: PASS | Coord: (540,260) | Time: 2874ms | Logo found with 100.00% confidence
+[2026-07-16 11:06:26] [DEBUG] Saved annotated image to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\logo_detected.png
+[2026-07-16 11:06:26] [INFO] Step 3: Waiting for OEM logo to disappear...
+[2026-07-16 11:06:27] [DEBUG] Mock state explicitly set to: DISCLAIMER
+[2026-07-16 11:06:27] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\logo_check_20260716_110627.png (State: DISCLAIMER)
+[2026-07-16 11:06:27] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\logo_check_20260716_110627.png
+[2026-07-16 11:06:28] [DEBUG] Logo not found. Best match confidence: 0.40 at (809, 415)
+[2026-07-16 11:06:28] [INFO] Step: Logo Disappear Check | Status: PASS | Coord: N/A | Time: 1585ms | Logo disappeared; disclaimer screen active
+[2026-07-16 11:06:28] [INFO] Step 4: Detecting confirmation buttons...
+[2026-07-16 11:06:28] [DEBUG] Mock Capture: Copied mock_disclaimer.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\disclaimer_screen_1_20260716_110628.png (State: DISCLAIMER)
+[2026-07-16 11:06:28] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\disclaimer_screen_1_20260716_110628.png
+[2026-07-16 11:06:29] [INFO] Button 'OK' detected via Template Matching at (910, 545) with confidence 1.00
+[2026-07-16 11:06:29] [INFO] [LIVE] Dynamic button detection success: OK at (910, 545) via template_matching
+[2026-07-16 11:06:29] [INFO] Step: Detect Button (OK) | Status: PASS | Coord: (910,545) | Time: 1558ms | Found 'OK' via template_matching (Confidence: 100.00%)
+[2026-07-16 11:06:29] [DEBUG] Saved annotated image to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\reports\button_detected.png
+[2026-07-16 11:06:29] [INFO] Step 5: Tapping button 'OK' at (910, 545)...
+[2026-07-16 11:06:29] [INFO] [LIVE] Tap cycle 1 for 'OK' using current detected position (910, 545)
+[2026-07-16 11:06:30] [INFO] [LIVE] Tap attempt 1 candidate 1/5 at (910, 545)
+[2026-07-16 11:06:30] [INFO] Mock ADB: Executed touch tap at (910, 545)
+[2026-07-16 11:06:30] [INFO] Mock state transitioned to HOME (OK button pressed successfully)
+[2026-07-16 11:06:30] [INFO] [LIVE] Tap succeeded at (910, 545)
+[2026-07-16 11:06:30] [INFO] Step: Execute Tap | Status: PASS | Coord: (910,545) | Time: 21ms | Tapped button 'OK' successfully
+[2026-07-16 11:06:30] [INFO] Step 6: Verifying screen transition...
+[2026-07-16 11:06:32] [DEBUG] Mock Capture: Copied mock_home.png to c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\post_tap_screen_20260716_110632.png (State: HOME)
+[2026-07-16 11:06:32] [DEBUG] Captured screen and saved to: c:\Users\hp\Documents\TS - Programming\LogoLocatorTool\screenshots\post_tap_screen_20260716_110632.png
